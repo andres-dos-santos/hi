@@ -199,93 +199,107 @@ function Svgs() {
 
 export function Projects() {
   return (
-    <div className="pl-24 py-24 h-screen snap-start w-screen flex items-center justify-center">
-      <div className="flex flex-col w-[50%] mr-10">
-        <h1 className="font-bold text-5xl leading-10 -tracking-widest">
-          What did <br /> I do
-        </h1>
+    <>
+      <div className="mx-auto h-screen snap-start px-10 sm:px-0 sm:max-w-[700px] flex flex-col items-start justify-center">
+        <div className="flex flex-col w-full sm:w-[50%] sm:mr-10 pl-10">
+          <h1 className="font-bold text-3xl sm:text-5xl leading-5 sm:leading-10 -tracking-widest">
+            What did <br /> I do
+          </h1>
 
-        <p className="text-zinc-300 text-[15px] leading-[1.65rem] block mt-5">
-          Here you will be able to see some projects that I am working on or
-          have already worked on, I hope you like them.
-        </p>
+          <p className="text-zinc-300 text-xs sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-10">
+            Here you will be able to see some projects that I am working on or
+            have already worked on, I hope you like them.
+          </p>
 
-        <Link
-          href=""
-          className="text-sm text-white flex items-center group mt-10"
-        >
-          <p className="underline">See all projects</p>
-          <strong className="transition-all duration-300 group-hover:translate-x-2 ml-1.5">
-            ⟶
-          </strong>
-        </Link>
+          <Link
+            href=""
+            className="text-sm text-white flex items-center group mt-10"
+          >
+            <p className="underline">See all projects</p>
+            <strong className="transition-all duration-300 group-hover:translate-x-2 ml-1.5">
+              ⟶
+            </strong>
+          </Link>
 
-        <section className="flex items-center justify-between w-full mt-10">
-          <Svgs />
-        </section>
-      </div>
+          <section className="flex sm:flex-row flex-wrap items-center justify-between w-full mt-10">
+            <Svgs />
+          </section>
+        </div>
 
-      <aside className="grid grid-cols-3 gap-1">
-        {[
-          {
-            name: 'PROOF',
-            image: '/proof-logo.svg',
-            link: 'https://proof-production.netlify.app/',
-          },
-          {
-            name: 'TOCA AQUI',
-            image: '/toca-aqui-logo.svg',
-            link: null,
-          },
-          {
-            name: 'PASSKEY',
-            image: '/passkey-logo.svg',
-            link: null,
-          },
-          /** {
+        <aside className="grid grid-cols-3 gap-1 w-full mt-10 sm:mt-0 px-5">
+          {[
+            {
+              name: 'PROOF',
+              image: '/proof-logo.svg',
+              link: 'https://proof-production.netlify.app/',
+            },
+            {
+              name: 'TOCA AQUI',
+              image: '/toca-aqui-logo.svg',
+              link: null,
+            },
+            {
+              name: 'PASSKEY',
+              image: '/passkey-logo.svg',
+              link: null,
+            },
+            /** {
             name: 'PANTRY',
             image: '/gr-or-dt-logo.svg',
           }, */
-          {
-            name: 'GRorDT',
-            image: '/gr-or-dt-logo.svg',
-            link: null,
-          },
-          {
-            name: 'THERAPY',
-            image: '/therapy-logo.svg',
-            link: null,
-          },
-        ].map((item) =>
-          item.link ? (
-            <Link
-              href={item.link}
-              target="_blank"
-              className="h-[10rem] w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700"
-              key={item.name}
-            >
-              <Image src={item.image} alt="" width={80} height={80} />
-              <span className="font-semibold tracking-wider text-xs">
-                {item.name}
-              </span>
-              <span className="font-medium text-xs p-2 bg-green-700/20 block mt-1.5">
-                published
-              </span>
-            </Link>
-          ) : (
-            <div className="h-[10rem] w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700">
-              <Image src={item.image} alt="" width={80} height={80} />
-              <span className="font-semibold tracking-wider text-xs">
-                {item.name}
-              </span>
+            {
+              name: 'GRorDT',
+              image: '/gr-or-dt-logo.svg',
+              link: null,
+            },
+            {
+              name: 'THERAPY',
+              image: '/therapy-logo.svg',
+              link: null,
+            },
+          ].map((item) =>
+            item.link ? (
+              <Link
+                href={item.link}
+                target="_blank"
+                className="h-[8rem] sm:h-[10rem] sm:w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700"
+                key={item.name}
+              >
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={80}
+                  height={80}
+                  className="sm:w-[80px] sm:h-[80px] h-[40px] w-[40px]"
+                />
+                <span className="font-semibold tracking-wider text-[9px] sm:text-xs">
+                  {item.name}
+                </span>
+                <span className="font-medium text-[10px] sm:text-xs p-1 sm:p-2 bg-green-700/20 block mt-1.5">
+                  published
+                </span>
+              </Link>
+            ) : (
+              <div className="h-[8rem] sm:h-[10rem] sm:w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700">
+                <Image
+                  src={item.image}
+                  alt=""
+                  width={80}
+                  height={80}
+                  className="sm:w-[80px] sm:h-[80px] h-[40px] w-[40px]"
+                />
+                <span className="font-semibold tracking-wider text-[9px] sm:text-xs">
+                  {item.name}
+                </span>
 
-              <span className="font-medium text-xs p-2 bg-zinc-700/50 block mt-1.5">
-                coming soon
-              </span>
-            </div>
-          ),
-        )}
-      </aside>
-    </div>
+                <span className="font-medium text-[10px] sm:text-xs p-1 sm:p-2 bg-zinc-700/50 block mt-1.5">
+                  coming soon
+                </span>
+              </div>
+            ),
+          )}
+        </aside>
+      </div>
+    </>
   )
 }

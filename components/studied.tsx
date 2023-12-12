@@ -4,12 +4,12 @@ import Link from 'next/link'
 export function Studied() {
   return (
     <div className="mx-auto h-screen snap-start max-w-[700px] flex flex-col items-start justify-center">
-      <strong className="font-bold text-5xl leading-10 -tracking-widest">
+      <strong className="font-bold text-3xl sm:text-5xl leading-5 sm:leading-10 -tracking-widest">
         what I have <br /> studied
       </strong>
 
       <div className="mt-10">
-        <p className="text-zinc-300 text-[15px] leading-[1.65rem] block mt-5">
+        <p className="text-zinc-300 text-xs sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-5">
           In this session I will show everything I have studied, besides the
           entrance exam of course.
         </p>
