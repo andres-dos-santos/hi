@@ -205,7 +205,7 @@ export function Projects() {
             What did <br /> I do
           </h1>
 
-          <p className="text-zinc-300 text-[13px] sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-10">
+          <p className="text-zinc-700 dark:text-zinc-300  text-[13px] sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-10">
             Here you will be able to see some projects that I am working on or
             have already worked on, I hope you like them.
           </p>
@@ -213,7 +213,7 @@ export function Projects() {
           <Link
             href="https://github.com/andres-dos-santos"
             target="_blank"
-            className="text-sm text-white flex items-center group mt-10"
+            className="text-sm text-zinc-800 dark:text-white flex items-center group mt-10"
           >
             <p className="underline">See all projects</p>
             <strong className="transition-all duration-300 group-hover:translate-x-2 ml-1.5">

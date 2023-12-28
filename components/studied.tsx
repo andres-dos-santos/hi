@@ -51,7 +51,7 @@ export async function Studied() {
       </strong>
 
       <div className="mt-10">
-        <p className="text-zinc-300 text-[13px] sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-5">
+        <p className="text-zinc-700 dark:text-zinc-300 text-[13px] sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-5">
           In this session I will show everything I have studied, besides the
           entrance exam of course.
         </p>
@@ -59,7 +59,7 @@ export async function Studied() {
 
       <Link
         href=""
-        className="text-sm text-white mt-10 flex items-center group"
+        className="text-sm text-zinc-800 dark:text-white mt-10 flex items-center group"
       >
         <p className="underline">See more</p>
         <strong className="transition-all duration-300 group-hover:translate-x-2 ml-1.5">
@@ -70,8 +70,8 @@ export async function Studied() {
       <div className="flex items-center mt-10 space-x-2.5">
         {data.studieds.map((item: Data) => (
           <Link
-            href={item.slug}
-            className="p-5 bg-zinc-800/70 w-[270px] rounded-xl flex flex-col items-center justify-center transition-transform duration-200 border border-zinc-800/70 hover:border-zinc-700"
+            href={`/studied/${item.slug}`}
+            className="p-5 bg-zinc-100/50 dark:bg-zinc-800/70 w-[270px] rounded-xl flex flex-col items-center justify-center transition-transform duration-200 border border-zinc-200/70 dark:border-zinc-800/70 hover:border-zinc-200 dark:hover:border-zinc-700"
           >
             <Image
               alt=""
@@ -82,7 +82,7 @@ export async function Studied() {
               className="h-[130px] w-[250px] rounded-lg"
             />
 
-            <p className="text-zinc-300 font-medium text-[13px] block mt-5">
+            <p className="text-zinc-800 dark:text-zinc-300 text-[14px] leading-4 block mt-5">
               {item.description}
             </p>
           </Link>
