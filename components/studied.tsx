@@ -1,15 +1,57 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-export function Studied() {
+interface Data {
+  slug: string
+  description: string
+  image: {
+    width: number
+    height: number
+    url: string
+  }
+}
+
+const url = process.env.NEXT_PUBLIC_HYGRAPH_URL ?? ''
+
+async function getStudieds() {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: `
+        {
+          studieds {
+            slug
+            description
+            image {
+              width
+              height
+              url
+            }
+          }
+        }
+      `,
+    }),
+  })
+
+  const data = await response.json()
+
+  return data
+}
+
+export async function Studied() {
+  const { data } = await getStudieds()
+
   return (
-    <div className="mx-auto h-screen snap-start max-w-[700px] flex flex-col items-start justify-center">
+    <div className="mx-auto h-screen px-10 sm:px-0 snap-start max-w-[700px] flex flex-col items-start justify-center">
       <strong className="font-bold text-3xl sm:text-5xl leading-5 sm:leading-10 -tracking-widest">
         what I have <br /> studied
       </strong>
 
       <div className="mt-10">
-        <p className="text-zinc-300 text-xs sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-5">
+        <p className="text-zinc-300 text-[13px] sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-5">
           In this session I will show everything I have studied, besides the
           entrance exam of course.
         </p>
@@ -26,60 +68,25 @@ export function Studied() {
       </Link>
 
       <div className="flex items-center mt-10 space-x-2.5">
-        <Link
-          href=""
-          className="p-2 bg-zinc-800/70 w-[270px] flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 border border-zinc-800/70 hover:border-zinc-700"
-        >
-          <Image
-            alt=""
-            src="https://i.ytimg.com/vi/uyhzCBEGaBY/hq720_custom_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhgIGUoTzAP&rs=AOn4CLCX3Ps_FhHvfXbW9OOz28GxbTjA5g"
-            width={250}
-            height={130}
-            quality={100}
-            className="h-[130px] w-[250px]"
-          />
+        {data.studieds.map((item: Data) => (
+          <Link
+            href={item.slug}
+            className="p-5 bg-zinc-800/70 w-[270px] rounded-xl flex flex-col items-center justify-center transition-transform duration-200 border border-zinc-800/70 hover:border-zinc-700"
+          >
+            <Image
+              alt=""
+              src={item.image.url}
+              width={item.image.width}
+              height={item.image.height}
+              quality={100}
+              className="h-[130px] w-[250px] rounded-lg"
+            />
 
-          <p className="text-zinc-300 font-medium text-[12px] block mt-5">
-            In this session I will show everything I have studied, besides the
-            entrance exam of course.
-          </p>
-        </Link>
-        <Link
-          href=""
-          className="p-2 bg-zinc-800/70 w-[270px] flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 border border-zinc-800/70 hover:border-zinc-700"
-        >
-          <Image
-            alt=""
-            src="https://i.ytimg.com/vi/uyhzCBEGaBY/hq720_custom_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhgIGUoTzAP&rs=AOn4CLCX3Ps_FhHvfXbW9OOz28GxbTjA5g"
-            width={250}
-            height={130}
-            quality={100}
-            className="h-[130px] w-[250px]"
-          />
-
-          <p className="text-zinc-300 font-medium text-[12px] block mt-5">
-            In this session I will show everything I have studied, besides the
-            entrance exam of course.
-          </p>
-        </Link>
-        <Link
-          href=""
-          className="p-2 bg-zinc-800/70 w-[270px] flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 border border-zinc-800/70 hover:border-zinc-700"
-        >
-          <Image
-            alt=""
-            src="https://i.ytimg.com/vi/uyhzCBEGaBY/hq720_custom_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhgIGUoTzAP&rs=AOn4CLCX3Ps_FhHvfXbW9OOz28GxbTjA5g"
-            width={250}
-            height={130}
-            quality={100}
-            className="h-[130px] w-[250px]"
-          />
-
-          <p className="text-zinc-300 font-medium text-[12px] block mt-5">
-            In this session I will show everything I have studied, besides the
-            entrance exam of course.
-          </p>
-        </Link>
+            <p className="text-zinc-300 font-medium text-[13px] block mt-5">
+              {item.description}
+            </p>
+          </Link>
+        ))}
       </div>
     </div>
   )

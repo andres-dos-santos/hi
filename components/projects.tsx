@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
 function Svgs() {
@@ -200,19 +199,20 @@ function Svgs() {
 export function Projects() {
   return (
     <>
-      <div className="mx-auto h-screen snap-start px-10 sm:px-0 sm:max-w-[700px] flex flex-col items-start justify-center">
-        <div className="flex flex-col w-full sm:w-[50%] sm:mr-10 pl-10">
+      <div className="mx-auto h-screen snap-start px-10 sm:px-0 sm:max-w-[700px] flex flex-col items-center justify-center">
+        <div className="flex flex-col w-full">
           <h1 className="font-bold text-3xl sm:text-5xl leading-5 sm:leading-10 -tracking-widest">
             What did <br /> I do
           </h1>
 
-          <p className="text-zinc-300 text-xs sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-10">
+          <p className="text-zinc-300 text-[13px] sm:text-[15px] leading-[1.25rem] sm:leading-[1.65rem] block mt-10">
             Here you will be able to see some projects that I am working on or
             have already worked on, I hope you like them.
           </p>
 
           <Link
-            href=""
+            href="https://github.com/andres-dos-santos"
+            target="_blank"
             className="text-sm text-white flex items-center group mt-10"
           >
             <p className="underline">See all projects</p>
@@ -226,7 +226,7 @@ export function Projects() {
           </section>
         </div>
 
-        <aside className="grid grid-cols-3 gap-1 w-full mt-10 sm:mt-0 px-5">
+        {/** <aside className="flex items-center space-x-1.5 mt-10">
           {[
             {
               name: 'PROOF',
@@ -243,10 +243,10 @@ export function Projects() {
               image: '/passkey-logo.svg',
               link: null,
             },
-            /** {
-            name: 'PANTRY',
-            image: '/gr-or-dt-logo.svg',
-          }, */
+            {
+              name: 'PANTRY',
+              image: '/gr-or-dt-logo.svg',
+            },
             {
               name: 'GRorDT',
               image: '/gr-or-dt-logo.svg',
@@ -262,7 +262,7 @@ export function Projects() {
               <Link
                 href={item.link}
                 target="_blank"
-                className="h-[8rem] sm:h-[10rem] sm:w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700"
+                className="h-[8rem] sm:h-[11rem] sm:w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700"
                 key={item.name}
               >
                 <Image
@@ -280,7 +280,7 @@ export function Projects() {
                 </span>
               </Link>
             ) : (
-              <div className="h-[8rem] sm:h-[10rem] sm:w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700">
+              <div className="h-[8rem] sm:h-[11rem] sm:w-[10rem] bg-zinc-800/70 flex flex-col items-center justify-center transition-transform duration-200 hover:scale-105 hover:border hover:border-zinc-700">
                 <Image
                   src={item.image}
                   alt=""
@@ -298,7 +298,7 @@ export function Projects() {
               </div>
             ),
           )}
-        </aside>
+        </aside> */}
       </div>
     </>
   )

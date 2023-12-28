@@ -7,6 +7,9 @@ const nextConfig = {
         hostname: 'i.ytimg.com',
         port: '',
       },
+      {
+        hostname: 'media.graphassets.com',
+      },
     ],
   },
 }
