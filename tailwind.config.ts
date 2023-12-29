@@ -11,9 +11,10 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: 'var(--font-inter)',
+        serif: 'var(--font-code)',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
 export default config

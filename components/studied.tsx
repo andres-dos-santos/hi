@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 interface Data {
   slug: string
-  description: string
+  title: string
   image: {
     width: number
     height: number
@@ -16,6 +16,9 @@ const url = process.env.NEXT_PUBLIC_HYGRAPH_URL ?? ''
 async function getStudieds() {
   const response = await fetch(url, {
     method: 'POST',
+    next: {
+      revalidate: 30,
+    },
     headers: {
       'Content-Type': 'application/json',
     },
@@ -24,7 +27,7 @@ async function getStudieds() {
         {
           studieds {
             slug
-            description
+            title
             image {
               width
               height
@@ -76,14 +79,14 @@ export async function Studied() {
             <Image
               alt=""
               src={item.image.url}
-              width={item.image.width}
-              height={item.image.height}
+              width={250}
+              height={130}
               quality={100}
               className="h-[130px] w-[250px] rounded-lg"
             />
 
-            <p className="text-zinc-800 dark:text-zinc-300 text-[14px] leading-4 block mt-5">
-              {item.description}
+            <p className="text-zinc-800 dark:text-zinc-300 text-[14px] leading-4 block mt-5 font-medium">
+              {item.title}
             </p>
           </Link>
         ))}

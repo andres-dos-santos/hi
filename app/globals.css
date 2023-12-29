@@ -9,4 +9,24 @@
     scroll-behavior: smooth;
     width: 100vw;
   }
+
+  p {
+    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 -tracking-wide leading-6;
+  }
+
+  strong {
+    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100;
+  }
+
+  h3 {
+    @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block pb-5;
+  }
+
+  code {
+    @apply text-zinc-800 dark:text-zinc-100 font-serif p-2 bg-zinc-100 dark:bg-zinc-800;
+  }
+
+  pre {
+    @apply font-serif;
+  }
 }

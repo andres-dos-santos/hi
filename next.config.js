@@ -10,6 +10,9 @@ const nextConfig = {
       {
         hostname: 'media.graphassets.com',
       },
+      {
+        hostname: 'github.com',
+      },
     ],
   },
 }
