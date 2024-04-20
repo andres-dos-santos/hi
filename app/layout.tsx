@@ -1,14 +1,15 @@
 /* eslint-disable camelcase */
 import type { Metadata } from 'next'
 import { Inter, IBM_Plex_Mono } from 'next/font/google'
-import Link from 'next/link'
 
 import { Providers } from './providers'
 
-import { Theme } from '@/components/theme'
-import { Logo } from '@/components/logo'
+// import { Theme } from '@/components/theme'
+// import { Logo } from '@/components/logo'
 
 import './globals.css'
+import { Theme } from '@/components/theme'
+import { Link } from '@/components/pathname'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const plexMono = IBM_Plex_Mono({
@@ -30,18 +31,38 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
-      <body className="antialiased bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-50">
+      <body className="antialiased bg-[#fefefe] dark:bg-[#1c1c1c] px-10 sm:px-0">
         <Providers>
-          <header className="backdrop-blur-sm fixed top-0 left-0 right-0 border-b border-zinc-200 dark:border-zinc-700">
-            <div className="h-14 mx-auto px-10 sm:px-0 sm:max-w-[700px] flex items-center justify-between">
-              <Link href="/">
-                <Logo />
-              </Link>
+          <div className="sm:max-w-[800px] sm:mx-auto">
+            <header className="my-20">
+              <nav className="flex justify-between items-center">
+                <div className="flex items-center space-x-2.5 sm:space-x-5">
+                  <span className="after:content-['@andres'] sm:after:content-['@andresdossantos'] text-sm font-medium dark:text-zinc-400 text-zinc-700" />
 
-              <Theme />
-            </div>
-          </header>
-          {children}
+                  <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
+                    :
+                  </span>
+
+                  <Link href="/">Blog</Link>
+
+                  <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
+                    /
+                  </span>
+
+                  <Link href="/works">Works</Link>
+
+                  <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
+                    /
+                  </span>
+
+                  <Link href="/books">Books</Link>
+                </div>
+
+                <Theme />
+              </nav>
+            </header>
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

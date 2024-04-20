@@ -2,26 +2,27 @@ import Link from 'next/link'
 
 import { Title } from '@/components/title'
 
-export const revalidate =
-  process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 8 // 8 hours
-
-interface Post {
-  title: string
-  id: string
-  createdAt: string
-}
-
 const query = `
   query {
-    posts {
-      title
+    books {
       id
-      createdAt
+      title
+      link
+      readAt
     }
   }
 `
 
-async function getPosts(): Promise<Post[]> {
+interface BookResponse {
+  id: string
+  link: string
+  title: string
+  readAt: string
+}
+
+export const revalidate = 60 * 60 * 8 // 8 hours
+
+async function getBooks(): Promise<BookResponse[]> {
   const response = await fetch(
     'https://api-sa-east-1.hygraph.com/v2/clcckqn423yp601uo3xcd1rh7/master',
     {
@@ -35,31 +36,32 @@ async function getPosts(): Promise<Post[]> {
 
   const json = await response.json()
 
-  return json.data.posts
+  return json.data.books
 }
 
-export default async function Home() {
-  const posts = await getPosts()
+export default async function Books() {
+  const books = await getBooks()
 
   return (
     <>
-      <Title>Blog</Title>
+      <Title>Books</Title>
 
       <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
+        {books.map((book) => (
+          <li key={book.id}>
             <Link
               className="flex items-center space-x-5 sm:space-x-10 group mb-5"
-              href={`/post/${post.id}`}
+              href={book.link}
+              target="_blank"
             >
               <span className="text-sm font-medium dark:text-zinc-400 text-zinc-500 flex items-center justify-center">
-                {post.createdAt.slice(0, 4)}{' '}
+                {book.readAt.slice(0, 4)}{' '}
                 <span className="h-1 w-1 bg-zinc-500 dark:bg-zinc-400 rounded-full mx-2.5" />
-                {post.createdAt.slice(5, 7)}
+                {book.readAt.slice(5, 7)}
               </span>
 
               <span className="text-sm text-zinc-700 font-medium dark:font-normal dark:text-white group-hover:underline truncate">
-                {post.title}
+                {book.title}
               </span>
             </Link>
           </li>

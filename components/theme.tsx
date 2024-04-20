@@ -18,9 +18,9 @@ export function Theme() {
       onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
     >
       {resolvedTheme === 'dark' ? (
-        <Sun className="w-5 h-5" />
+        <Sun className="w-4 sm:w-5 h-4 sm:h-5" />
       ) : (
-        <Moon className="w-5 h-5" />
+        <Moon className="w-4 sm:w-5 h-4 sm:h-5" />
       )}
     </button>
   )
