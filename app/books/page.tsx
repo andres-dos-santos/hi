@@ -20,7 +20,8 @@ interface BookResponse {
   readAt: string
 }
 
-export const revalidate = 60 * 60 * 8 // 8 hours
+export const revalidate =
+  process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 8 // 8 hours
 
 async function getBooks(): Promise<BookResponse[]> {
   const response = await fetch(
