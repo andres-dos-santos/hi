@@ -1,5 +1,7 @@
 import { Title } from '@/components/title'
 
+export const revalidate = 30
+
 interface Props {
   params: {
     id: string
@@ -8,14 +10,17 @@ interface Props {
 
 interface Post {
   title: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   content: { html: any }
   createdAt: string
+  tags: string[]
 }
 
 const query = `
   query GET_USER($id: ID!) {
     posts(where: { id: $id }) {
       title
+      tags
       content { html }
       createdAt
     }
@@ -48,9 +53,20 @@ export default async function PostBySlug(props: Props) {
 
   return (
     <>
-      <Title>{data.title}</Title>
+      <Title className="mb-10">{data.title}</Title>
 
-      <div dangerouslySetInnerHTML={{ __html: html }} className="" />
+      <nav className="flex items-center gap-2 mb-10">
+        {data.tags.map((tag) => (
+          <button
+            key={tag}
+            className="border dark:border-zinc-700 px-3 py-1 flex items-center justify-center rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800"
+          >
+            <span className="text-xs font-medium capitalize">{tag}</span>
+          </button>
+        ))}
+      </nav>
+
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </>
   )
 }

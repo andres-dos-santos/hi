@@ -19,7 +19,7 @@
   }
 
   h3 {
-    @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block pb-5;
+    @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block pb-5 text-xl font-medium;
   }
 
   code {
