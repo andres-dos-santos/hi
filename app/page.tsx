@@ -13,7 +13,7 @@ interface Post {
 
 const query = `
   query {
-    posts {
+    posts(orderBy: createdAt_DESC) {
       title
       id
       createdAt
