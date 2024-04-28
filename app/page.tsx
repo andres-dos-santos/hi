@@ -43,22 +43,22 @@ export default async function Home() {
 
   return (
     <>
-      <Title>Blog</Title>
+      <Title>Learn</Title>
 
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
             <Link
-              className="flex items-center space-x-5 sm:space-x-10 group mb-5"
+              className="flex items-start space-x-5 sm:space-x-10 group mb-5"
               href={`/post/${post.id}`}
             >
-              <span className="text-sm font-medium dark:text-zinc-400 text-zinc-500 flex items-center justify-center">
+              <span className="text-xs sm:text-sm font-medium dark:text-zinc-400 text-zinc-500 flex items-center justify-center">
                 {post.createdAt.slice(0, 4)}{' '}
-                <span className="h-1 w-1 bg-zinc-500 dark:bg-zinc-400 rounded-full mx-2.5" />
+                <span className="h-1 w-1 bg-zinc-500 dark:bg-zinc-400 rounded-full mx-1.5 sm:mx-2.5" />
                 {post.createdAt.slice(5, 7)}
               </span>
 
-              <span className="text-sm text-zinc-700 font-medium dark:font-normal dark:text-white group-hover:underline truncate">
+              <span className="text-xs sm:text-sm text-zinc-700 font-medium dark:font-normal dark:text-white group-hover:underline">
                 {post.title}
               </span>
             </Link>
