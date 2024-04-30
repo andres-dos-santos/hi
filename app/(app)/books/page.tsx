@@ -47,7 +47,7 @@ export default async function Books() {
     <>
       <Title>Books</Title>
 
-      <ul className="mt-10">
+      <ul className="relative mt-10 border-t border-zinc-200 dark:border-zinc-700/50 pt-10">
         {books.map((book) => (
           <li key={book.id}>
             <Link
