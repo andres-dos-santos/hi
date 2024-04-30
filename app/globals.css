@@ -19,11 +19,23 @@
   }
 
   h3 {
-    @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block pb-5 text-xl font-medium;
+    @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block text-xl font-semibold;
   }
 
   code {
-    @apply text-zinc-800 dark:text-zinc-100 font-serif text-[13px] font-normal p-1 bg-zinc-100 dark:bg-zinc-800;
+    @apply text-zinc-800 dark:text-zinc-100 font-serif text-[13px] font-normal p-1 bg-zinc-100 dark:bg-zinc-800 overflow-x-visible;
+  }
+
+  a {
+    @apply text-blue-500;
+  }
+
+  blockquote {
+    @apply border-l-8 border-zinc-100 dark:border-zinc-700/50 p-5;
+  }
+
+  blockquote, p {
+    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] mb-10;
   }
 
   pre {
