@@ -47,7 +47,7 @@ export default async function Books() {
     <>
       <Title>Books</Title>
 
-      <ul>
+      <ul className="mt-10">
         {books.map((book) => (
           <li key={book.id}>
             <Link

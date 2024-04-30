@@ -6,7 +6,7 @@ export function Title(props: ComponentProps<'h1'>) {
     <h1
       {...props}
       className={clsx(
-        'text-3xl font-medium dark:text-white text-zinc-700 -tracking-wider mb-20',
+        'text-3xl font-medium dark:text-white text-zinc-700 -tracking-wider',
         props.className,
       )}
     >

@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
       <body className="antialiased bg-[#fefefe] dark:bg-[#1c1c1c] px-10 sm:px-0">
         <Providers>
-          <div className="sm:max-w-[800px] sm:mx-auto">
+          <div className="sm:max-w-[700px] sm:mx-auto">
             <header className="my-20">
               <nav className="flex justify-between items-center">
                 <div className="flex items-center space-x-2.5 sm:space-x-5">

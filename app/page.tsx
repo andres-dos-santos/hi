@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { Title } from '@/components/title'
-import { ChevronRight } from 'lucide-react'
 
 export const revalidate =
   process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 1 // 1 hour
@@ -42,62 +41,87 @@ async function getPosts(): Promise<Post[]> {
 export default async function Home() {
   const [worthReading, ...posts] = await getPosts()
 
+  const active = 'Todos'
+
   return (
     <>
       <Title>Learn</Title>
 
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
+      <div className="relative mt-10 border-t border-zinc-200 dark:border-zinc-700/50 pt-10">
+        <div className="absolute h-20 bg-gradient-to-b w-full top-0 right-0 left-0"></div>
+
+        <ul>
+          <strong className="text-xs font-semibold block mb-7">
+            VALE A PENA LER
+          </strong>
+
+          <li>
             <Link
               className="flex items-start gap-x-5 sm:gap-x-10 group mb-5"
-              href={`/post/${post.id}`}
+              href={`/post/${worthReading.id}`}
             >
               <span className="hidden sm:flex -tracking-wider text-xs sm:text-sm font-medium dark:text-zinc-400 text-zinc-500 items-center justify-center">
-                {post.createdAt.slice(0, 4)}{' '}
+                {worthReading.createdAt.slice(0, 4)}{' '}
                 <span className="h-1 w-1 bg-zinc-500 dark:bg-zinc-400 rounded-full mx-1.5 sm:mx-2.5" />
-                {post.createdAt.slice(5, 7)}
+                {worthReading.createdAt.slice(5, 7)}
               </span>
 
               <span className="text-sm text-zinc-700 font-medium dark:font-normal dark:text-white group-hover:underline">
-                {post.title}
+                {worthReading.title}
               </span>
             </Link>
           </li>
-        ))}
-      </ul>
 
-      <Link
-        href={`/post/${worthReading.id}`}
-        className="invisible sm:visible min-w-[450px] dark:text-white text-zinc-800 p-5 border border-zinc-200 fixed bottom-5 right-5 rounded-md dark:border-zinc-700/50 transition-all duration-300"
-      >
-        <header className="flex items-center justify-between mb-5">
-          <div className="flex flex-col">
-            <span className="-tracking-[0.00622em] text-sm font-semibold dark:text-white text-zinc-800">
-              Vale a pena ler
-            </span>
+          <strong className="text-xs font-semibold block my-7">TODOS</strong>
 
-            <span className="text-xs font-medium dark:text-zinc-400 text-zinc-500 mt-1.5">
-              Essa leitura vai valer a pena.
-            </span>
-          </div>
-        </header>
+          {posts.map((post) => (
+            <li key={post.id}>
+              <Link
+                className="flex items-start gap-x-5 sm:gap-x-10 group mb-5"
+                href={`/post/${post.id}`}
+              >
+                <span className="hidden sm:flex -tracking-wider text-xs sm:text-sm font-medium dark:text-zinc-400 text-zinc-500 items-center justify-center">
+                  {post.createdAt.slice(0, 4)}{' '}
+                  <span className="h-1 w-1 bg-zinc-500 dark:bg-zinc-400 rounded-full mx-1.5 sm:mx-2.5" />
+                  {post.createdAt.slice(5, 7)}
+                </span>
 
-        <span className="text-xs sm:text-sm text-zinc-700 font-medium dark:font-normal dark:text-white group-hover:underline">
-          {worthReading.title}
-        </span>
+                <span className="text-sm text-zinc-700 font-medium dark:font-normal dark:text-white group-hover:underline">
+                  {post.title}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-        <button className="hover:bg-zinc-200/75 hover:dark:bg-zinc-700/75 bg-zinc-100/75 dark:bg-zinc-800/75 w-full h-12 mt-5 rounded-md flex items-center justify-center group">
-          <span className="text-[13px] text-zinc-700 font-medium dark:text-white">
-            Ler história
-          </span>
+        <div className="absolute -left-60 -top-[1px] w-56">
+          {/** <section className="border-t border-zinc-200 dark:border-zinc-700/50 pt-10 mb-10">
+            <strong className="text-xs font-semibold block mb-7">
+              VALE A PENA LER
+            </strong>
 
-          <ChevronRight
-            size={14}
-            className="transition-all duration-300 translate-x-0 group-hover:translate-x-5 opacity-0 group-hover:opacity-100"
-          />
-        </button>
-      </Link>
+            <button className="text-start w-full text-xs text-zinc-600 font-medium dark:text-zinc-400 group-hover:underline dark:hover:text-white hover:text-zinc-900">
+              <span>{worthReading.title}</span>
+            </button>
+          </section> */}
+
+          <section className="border-t border-zinc-200 dark:border-zinc-700/50 pt-10">
+            <strong className="text-xs font-semibold block mb-7">TAGS</strong>
+
+            <ul className="flex flex-col gap-y-3">
+              {['Todos', 'React 19', 'Android', 'Docker'].map((item) => (
+                <button
+                  key={item}
+                  data-active={active === item}
+                  className="data-[active='true']:text-zinc-900 dark:data-[active='true']:text-white flex items-center justify-between w-full text-xs text-zinc-600 font-medium dark:text-zinc-400 group-hover:underline dark:hover:text-white hover:text-zinc-900"
+                >
+                  <span>{item}</span>
+                </button>
+              ))}
+            </ul>
+          </section>
+        </div>
+      </div>
     </>
   )
 }
