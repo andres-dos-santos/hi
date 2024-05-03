@@ -22,6 +22,14 @@
     @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block text-xl font-semibold;
   }
 
+  ul {
+    @apply list-disc;
+  }
+
+  li {
+    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] before:content-['-____'] flex ml-2.5;
+  }
+
   code {
     @apply text-zinc-800 dark:text-zinc-100 font-serif text-[13px] font-normal p-1 bg-zinc-100 dark:bg-zinc-800 overflow-x-visible;
   }
