@@ -1,12 +1,11 @@
 import { Title } from '@/components/title'
-import { Brain } from 'lucide-react'
 
 export default function Works() {
   return (
     <>
-      <Title>Trabalhos</Title>
+      <Title>Em breve</Title>
 
-      <ul className="gap-5 grid grid-cols-1 sm:grid-cols-2 mt-10">
+      {/** <ul className="gap-5 grid grid-cols-1 sm:grid-cols-2 mt-10">
         <li className="flex items-center space-x-5 p-2.5 group rounded-xl cursor-pointer">
           <div className="min-h-[40px] h-[40px] min-w-[40px] w-[40px] bg-zinc-200/50 dark:bg-zinc-700/50 flex items-center justify-center rounded-xl">
             <Brain size={14} />
@@ -40,7 +39,7 @@ export default function Works() {
             </span>
           </div>
         </li>
-      </ul>
+      </ul> */}
     </>
   )
 }

@@ -38,11 +38,11 @@ async function getPosts(): Promise<Post[]> {
   return json.data.posts
 }
 
-interface Props {
+/** interface Props {
   params: { tags: string }
-}
+} */
 
-export default async function Tags(props: Props) {
+export default async function Tags() {
   const posts = await getPosts()
 
   const active = 'Todos'
