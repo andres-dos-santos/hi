@@ -22,12 +22,16 @@
     @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block text-xl font-semibold;
   }
 
-  ul {
+  #article ul {
     @apply list-disc;
   }
 
-  li {
-    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] before:content-['-____'] flex ml-2.5;
+  #article li {
+    @apply flex before:content-['-_'] items-center font-bold text-cyan-500;
+  }
+
+  #article li div {
+    @apply ml-2 text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] font-normal;
   }
 
   code {

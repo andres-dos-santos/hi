@@ -66,7 +66,7 @@ export default async function PostBySlug(props: Props) {
         ))}
       </nav>
 
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <div id="article" dangerouslySetInnerHTML={{ __html: html }} />
     </>
   )
 }
