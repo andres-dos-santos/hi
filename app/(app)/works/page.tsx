@@ -4,7 +4,7 @@ import { Brain } from 'lucide-react'
 export default function Works() {
   return (
     <>
-      <Title>Works</Title>
+      <Title>Trabalhos</Title>
 
       <ul className="gap-5 grid grid-cols-1 sm:grid-cols-2 mt-10">
         <li className="flex items-center space-x-5 p-2.5 group rounded-xl cursor-pointer">

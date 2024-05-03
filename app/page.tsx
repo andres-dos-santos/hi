@@ -50,7 +50,7 @@ export default async function Tags(props: Props) {
   return (
     <>
       <header className="flex items-center justify-between">
-        <Title>Learn</Title>
+        <Title>Estudos</Title>
 
         {/** <form
           action=""
@@ -91,14 +91,10 @@ export default async function Tags(props: Props) {
           <section className="border-t border-zinc-200 dark:border-zinc-700/50 pt-10">
             <header className="flex items-center justify-between mb-7 space-x-2.5">
               <strong className="text-xs font-semibold">TAGS</strong>
-
-              <div className="flex items-center justify-between w-full text-xs text-zinc-600 font-medium dark:text-zinc-400 group-hover:underline dark:hover:text-white hover:text-zinc-900">
-                <span>Ver todos</span>
-              </div>
             </header>
 
             <ul className="flex flex-col space-y-3">
-              {['Todos', 'NextJS', 'Expo', 'Android', 'Docker'].map((item) => (
+              {['Todos'].map((item) => (
                 <li
                   key={item}
                   data-active={active === item}

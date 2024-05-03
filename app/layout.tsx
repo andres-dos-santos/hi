@@ -53,19 +53,19 @@ export default function RootLayout({
                     :
                   </span>
 
-                  <Link href="/">Learn</Link>
+                  <Link href="/">Estudos</Link>
 
                   <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
                     /
                   </span>
 
-                  <Link href="/works">Works</Link>
+                  <Link href="/works">Trabalhos</Link>
 
                   <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
                     /
                   </span>
 
-                  <Link href="/books">Books</Link>
+                  <Link href="/books">Livros</Link>
                 </div>
 
                 <Theme />
