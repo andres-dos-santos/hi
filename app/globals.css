@@ -27,7 +27,7 @@
   }
 
   #article li {
-    @apply flex before:content-['-_'] items-center font-bold text-cyan-500;
+    @apply flex before:content-['-_'] items-start font-bold text-cyan-500 mb-5;
   }
 
   #article li div {
