@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { Title } from '@/components/title'
+import { Find } from '@/components/find'
 
 export const revalidate =
   process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 1 // 1 hour
@@ -11,7 +12,7 @@ interface Post {
   createdAt: string
 }
 
-const query = `
+const queryWithoutSearches = `
   query {
     posts(orderBy: createdAt_DESC) {
       title
@@ -21,7 +22,21 @@ const query = `
   }
 `
 
-async function getPosts(): Promise<Post[]> {
+const queryWithSearches = `
+  query GetLearnPosts($searched: String) {
+    posts(where: { title_contains: $searched }, orderBy: createdAt_DESC) {
+      title
+      id
+      createdAt
+    }
+  }
+`
+
+async function getPosts(searched?: string): Promise<Post[]> {
+  const payload = searched
+    ? { query: queryWithSearches, variables: { searched } }
+    : { query: queryWithoutSearches }
+
   const response = await fetch(
     'https://api-sa-east-1.hygraph.com/v2/clcckqn423yp601uo3xcd1rh7/master',
     {
@@ -29,21 +44,19 @@ async function getPosts(): Promise<Post[]> {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query }),
+      body: JSON.stringify(payload),
     },
   )
 
   const json = await response.json()
 
-  return json.data.posts
+  return json.data ? json.data.posts : []
 }
 
-/** interface Props {
-  params: { tags: string }
-} */
-
-export default async function Tags() {
-  const posts = await getPosts()
+export default async function Learns(props: {
+  searchParams?: { find: string }
+}) {
+  const posts = await getPosts(props.searchParams?.find)
 
   const active = 'Todos'
 
@@ -52,17 +65,7 @@ export default async function Tags() {
       <header className="flex items-center justify-between">
         <Title>Estudos</Title>
 
-        {/** <form
-          action=""
-          className="flex items-center bg-zinc-200/50 dark:bg-zinc-800/50 px-3 h-12 rounded-full border border-zinc-200/50 dark:border-zinc-700/50 focus-within:border-zinc-200 focus-within:dark:border-zinc-700"
-        >
-          <Search size={14} />
-          <input
-            type="text"
-            className="font-medium text-xs outline-none bg-zinc-200/10 dark:bg-zinc-800/10 pl-2.5 placeholder:italic placeholder:text-zinc-500"
-            placeholder="Faça uma pesquisa..."
-          />
-        </form> */}
+        <Find />
       </header>
 
       <div className="relative mt-10 border-t border-zinc-200 dark:border-zinc-700/50 pt-10">
