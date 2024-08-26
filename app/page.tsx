@@ -81,26 +81,41 @@ export default async function Learns(props: {
         </ul>
       </div> */}
 
-      <span className="text-[13px] block mb-10">
-        Olá, me chamo Andres sou desenvolvedor a mais de 4 anos, nesse período
-        desenvolvi 3 aplicativos e 1 site e dou manutenção constante neles.
+      <span className="text-sm block mb-10 leading-7 mx-10">
+        I am a developer passionate about technology, always looking for new
+        challenges and learning. With experience in several programming
+        languages ​​(such as JavaScript and Kotlin) and frameworks (such as
+        React/React Native/Node and Jetpack Compose), I stand out for my ability
+        to adapt efficient and creative solutions to solve complex problems. I
+        have solid knowledge in Object-Oriented Programming, mobile application
+        development, and have worked with tools such as Supabase, Firebase,
+        Styled Components, AWS, Jetpack Compose, NextJS and Expo.
       </span>
 
-      <span className="text-[13px] block mb-10">
-        Tenho estudado muito o inglês e aprofundado meus conhecimentos para a
-        programação na medicina, principalmente na área de IA.
+      <span className="text-sm block mb-10 leading-7 mx-10">
+        I'm currently exploring areas such as AI applied to medicine, as well as
+        expanding my skills in iOS development.
       </span>
 
-      <span className="text-[13px] block mb-10">
-        Sou aluno de Ciências da Computação na faculdade Estácio de Sá e tenho
-        um profundo apreço por estudar e melhorar a cada dia.
+      <span className="text-sm block mb-10 leading-7 mx-10">
+        My approach to development is centered on clean code, modularity, and
+        good design practices. I enjoy collaborating in multidisciplinary teams,
+        where I can share knowledge and learn from other professionals. I am
+        interested in opportunities that allow me to continue to evolve as a
+        developer, while contributing to innovative and impactful projects.
       </span>
 
-      {/* <span className="text-[13px] block mb-10">mapa de onde eu moro</span> */}
+      <span className="text-sm block mb-10 leading-7 mx-10">
+        Whether developing a project from scratch or optimizing existing
+        systems, I am always ready to take on the next challenge and create
+        solutions that make a difference.
+      </span>
+
+      {/* <span className="text-[13px] block mb-10 mx-10">mapa de onde eu moro</span> */}
 
       <Map />
 
-      <span className="text-[13px] block mb-10">
+      <span className="text-[13px] block mb-10 mx-10">
         Indicador do tempo com os projetos
       </span>
 

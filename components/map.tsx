@@ -44,5 +44,5 @@ export function Map() {
     onInitMap()
   }, [])
 
-  return <div className="h-[600px]" ref={mapRef} />
+  return <div className="h-[400px]" ref={mapRef} />
 }
