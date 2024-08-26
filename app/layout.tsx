@@ -33,46 +33,38 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
       <body className="antialiased bg-[#fefefe] dark:bg-[#1c1c1c] px-10 sm:px-0">
         <Providers>
-          <div className="sm:max-w-[700px] sm:mx-auto">
-            <header className="my-20">
-              <nav className="flex justify-between items-center">
-                <div className="flex items-center space-x-2.5 sm:space-x-5">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 256 256"
-                    className="fill-zinc-800 dark:fill-white"
-                  >
-                    <path d="M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z"></path>
-                  </svg>
+          <header className="py-10 bg-zinc-800/50">
+            <div className="sm:max-w-[900px] sm:mx-auto flex items-center gap-2.5">
+              <div className="h-14 w-14 rounded bg-zinc-700/50 flex items-center justify-center">
+                <span className="font-semibold font-mono text-sm -tracking-wide">
+                  AS
+                </span>
+              </div>
 
-                  <span className="hidden sm:flex sm:after:content-['@andresdossantos'] text-sm font-medium dark:text-zinc-400 text-zinc-700" />
+              <div className="block">
+                <h1 className="font-semibold font-mono text-sm -tracking-wide">
+                  andres-dos-santos
+                </h1>
+                <span className="text-[12px] text-zinc-300 font-medium">
+                  4+ years of experience with Next, React Native, Node or
+                  Android
+                </span>
+              </div>
 
-                  <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
-                    :
-                  </span>
-
-                  <Link href="/">Estudos</Link>
-
-                  <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
-                    /
-                  </span>
-
-                  <Link href="/works">Trabalhos</Link>
-
-                  <span className="text-sm font-medium dark:text-zinc-400 text-zinc-700">
-                    /
-                  </span>
-
-                  <Link href="/books">Livros</Link>
-                </div>
-
-                <Theme />
+              <nav className="ml-auto gap-5 flex items-center">
+                <span className="text-[11px] font-semibold tracking-wide">
+                  HOME
+                </span>
+                <span className="text-[11px] font-semibold tracking-wide">
+                  PROJECTS
+                </span>
+                <span className="text-[11px] font-semibold tracking-wide">
+                  ARTICLES
+                </span>
               </nav>
-            </header>
-            {children}
-          </div>
+            </div>
+          </header>
+          <div className="sm:max-w-[900px] sm:mx-auto">{children}</div>
         </Providers>
       </body>
     </html>

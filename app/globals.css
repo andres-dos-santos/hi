@@ -10,6 +10,10 @@
     width: 100vw;
   }
 
+  body {
+    text-rendering: geometricPrecision;
+  }
+
   p {
     @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] mb-10;
   }
