@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Title } from '@/components/title'
 import { Find } from '@/components/find'
 import { ArrowUpRight, Github, PhoneCall } from 'lucide-react'
+import { Map } from '@/components/map'
 
 export const revalidate =
   process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 1 // 1 hour
@@ -95,7 +96,9 @@ export default async function Learns(props: {
         um profundo apreço por estudar e melhorar a cada dia.
       </span>
 
-      <span className="text-[13px] block mb-10">mapa de onde eu moro</span>
+      {/* <span className="text-[13px] block mb-10">mapa de onde eu moro</span> */}
+
+      <Map />
 
       <span className="text-[13px] block mb-10">
         Indicador do tempo com os projetos
