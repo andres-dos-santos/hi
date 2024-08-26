@@ -28,6 +28,9 @@ export function Map() {
         center: position,
         zoom: 17,
         mapId: 'my-next-js-map-id',
+        mapTypeControl: false,
+        fullscreenControl: false,
+        zoomControl: false,
       }
 
       const map = new Map(mapRef.current!, mapOptions)
