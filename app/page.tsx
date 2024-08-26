@@ -1,9 +1,4 @@
-import Link from 'next/link'
-
-import { Title } from '@/components/title'
-import { Find } from '@/components/find'
-import { ArrowUpRight, Github, PhoneCall } from 'lucide-react'
-import { Map } from '@/components/map'
+import { HomeFooter } from '@/components/home-footer'
 
 export const revalidate =
   process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 1 // 1 hour
@@ -84,12 +79,15 @@ export default async function Learns(props: {
       <span className="text-sm block mb-10 leading-7 mx-10">
         I am a developer passionate about technology, always looking for new
         challenges and learning. With experience in several programming
-        languages ​​(such as JavaScript and Kotlin) and frameworks (such as
+        languages​ ​(such as JavaScript and Kotlin) and frameworks (such as
         React/React Native/Node and Jetpack Compose), I stand out for my ability
-        to adapt efficient and creative solutions to solve complex problems. I
-        have solid knowledge in Object-Oriented Programming, mobile application
-        development, and have worked with tools such as Supabase, Firebase,
-        Styled Components, AWS, Jetpack Compose, NextJS and Expo.
+        to adapt efficient and creative solutions to solve complex problems.
+      </span>
+
+      <span className="text-sm block mb-10 leading-7 mx-10">
+        I have solid knowledge in Object-Oriented Programming, mobile
+        application development, and have worked with tools such as Supabase,
+        Firebase, Styled Components, AWS, Jetpack Compose, NextJS and Expo.
       </span>
 
       <span className="text-sm block mb-10 leading-7 mx-10">
@@ -113,34 +111,13 @@ export default async function Learns(props: {
 
       {/* <span className="text-[13px] block mb-10 mx-10">mapa de onde eu moro</span> */}
 
-      <Map />
+      {/* <Map /> */}
 
       <span className="text-[13px] block mb-10 mx-10">
-        Indicador do tempo com os projetos
+        --- --- -- -- - -- ---- Indicador do tempo com os projetos
       </span>
 
-      <footer className="flex items-center gap-5">
-        <button className="flex items-center justify-center">
-          <span className="text-[13px] font-medium -tracking-wide text-blue-500 border-b border-blue-500">
-            Download my resume
-          </span>
-          <ArrowUpRight size={14} className="text-blue-500" />
-        </button>
-
-        <button className="flex items-center justify-center">
-          <span className="text-[13px] font-medium -tracking-wide text-blue-500 border-b border-blue-500">
-            See my Github
-          </span>
-          <ArrowUpRight size={14} className="text-blue-500" />
-        </button>
-
-        <button className="flex items-center justify-center">
-          <span className="text-[13px] font-medium -tracking-wide text-blue-500 border-b border-blue-500">
-            Come to my LinkedIn
-          </span>
-          <ArrowUpRight size={14} className="text-blue-500" />
-        </button>
-      </footer>
+      <HomeFooter />
     </div>
   )
 }
