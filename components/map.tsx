@@ -35,7 +35,7 @@ export function Map() {
 
       const map = new Map(mapRef.current!, mapOptions)
 
-      const marker = new AdvancedMarkerElement({
+      const _ = new AdvancedMarkerElement({
         map,
         position,
       })
@@ -44,5 +44,5 @@ export function Map() {
     onInitMap()
   }, [])
 
-  return <div className="h-[400px]" ref={mapRef} />
+  return <div className="h-[300px]" ref={mapRef} />
 }
