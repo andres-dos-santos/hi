@@ -25,9 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${plexMono.variable}`}>
       <body className="antialiased bg-[#fefefe] dark:bg-[#1c1c1c] px-10 sm:px-0">
-        <div className="sm:max-w-[700px] sm:mx-auto h-screen flex items-center">
-          {children}
-        </div>
+        <div className="sm:max-w-[700px] sm:mx-auto">{children}</div>
       </body>
     </html>
   )

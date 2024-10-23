@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 // export const revalidate =
@@ -52,7 +53,7 @@ import Link from 'next/link'
 
 export default async function Learns() {
   return (
-    <div className="">
+    <div className="flex flex-col justify-center h-screen">
       <div className="flex items-baseline mb-8 mt-10 gap-5">
         <h6 className="font-medium -tracking-wider">Hello!</h6>
       </div>
@@ -69,6 +70,32 @@ export default async function Learns() {
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
         I have 1 published application so far.
       </span>
+
+      <hr />
+
+      <ul className="mt-10">
+        <li className="flex items-center gap-x-5">
+          <Image
+            src="/zaal-result-logo.png"
+            alt=""
+            width={60}
+            height={60}
+            quality={100}
+          />
+
+          <div className="flex flex-col">
+            <strong className="text-xs font-semibold -tracking-wider mb-1">
+              ZAAL RESULTADO
+            </strong>
+
+            <span className="text-xs text-zinc-500 leading-4">
+              <span className="font-medium">(Android/iOS)</span> Zaal Resultado
+              is the ideal application for companies that want to monitor and
+              analyze their performance effectively.
+            </span>
+          </div>
+        </li>
+      </ul>
     </div>
   )
 }
