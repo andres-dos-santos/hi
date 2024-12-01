@@ -159,7 +159,14 @@ export default async function _page() {
         Caso tenha interesse em ver meu <Marker>currículo</Marker> pode baixar
         ele <Push href="https://www.github.com/andres-dos-santos">aqui</Push>.
         Se quiser saber o meu <Marker>plano de estudos para 2025</Marker> pode
-        clicar <Link href="/study-plan">aqui</Link>.
+        clicar{' '}
+        <Link
+          href="https://asba.notion.site/learning-1423ce0317be808a902ff2f6ad071b21"
+          target="__blank"
+        >
+          aqui
+        </Link>
+        .
       </span>
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">

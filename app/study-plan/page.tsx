@@ -1,5 +1,3 @@
-import { ComponentProps } from 'react'
-
 // export const revalidate =
 //   process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 1 // 1 hour
 
