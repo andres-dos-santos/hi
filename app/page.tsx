@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import Link from 'next/link'
+import { ComponentProps } from 'react'
 
 // export const revalidate =
 //   process.env.NODE_ENV === 'development' ? 30 : 60 * 60 * 1 // 1 hour
@@ -51,51 +51,136 @@ import Link from 'next/link'
 //   return json.data ? json.data.posts : []
 // }
 
-export default async function Learns() {
+function Marker(props: ComponentProps<'span'>) {
+  return <span className="bg-yellow-200">{props.children}</span>
+}
+
+function Push(props: ComponentProps<'a'>) {
   return (
-    <div className="flex flex-col justify-center h-screen">
-      <div className="flex items-baseline mb-8 mt-10 gap-5">
-        <h6 className="font-medium -tracking-wider">Hello!</h6>
-      </div>
+    <span className="underline text-blue-500">
+      <a href={props.href} target="_blank">
+        {props.children}
+      </a>
+    </span>
+  )
+}
+
+export default async function _page() {
+  return (
+    <div className="flex flex-col pb-10">
+      <header className="flex items-baseline justify-between mb-8 mt-10 gap-5">
+        <div className="flex flex-col items-start w-full">
+          <h6 className="font-medium mb-5 text-[20px] -tracking-wider">
+            Dos Santos, Andres{' '}
+            <span className="text-zinc-700 text-[13px]">24</span>
+          </h6>
+
+          <nav className="flex items-center justify-between w-full">
+            <span className="text-zinc-700 text-[13px] flex">
+              Brasil, Rio de Janeiro - Três Rios <br />
+              Brasileiro
+            </span>
+
+            <span className="text-zinc-700 text-[13px] flex">
+              (24) 9 99315-4394
+              <br />
+              andres.dosantosbritoamaral@gmail.com
+            </span>
+          </nav>
+        </div>
+      </header>
+
+      <span className="text-sm block mb-10 mt-5 leading-7 -tracking-wide">
+        Meu nome é Andres, tenho <Marker>+ de 4 anos</Marker> de experiência com
+        programação <Marker>frontend</Marker> e <Marker>mobile</Marker>. Sou
+        aluno de <Marker>Sistemas de Informações</Marker> e me dedico todos os
+        dias para entregar soluções práticas e eficientes.
+      </span>
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
-        My name is Andres, I am a programmer specialized in React and React
-        Native, very good with Node and learning Android, contact me on{' '}
-        <Link href="http://linkedin.com/in/andres-dosantos/" target="__blank">
-          LinkedIn
-        </Link>
+        Fui desenvolvedor <Marker>júnior</Marker> na H4money e fiquei
+        responsável por elaborar, junto com o time, um site e um aplicativo de{' '}
+        <Marker>sistema de gestão financeira</Marker>.
+      </span>
+
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
+        Sou desenvolvedor <Marker>pleno</Marker> na Zaal Tecnologia, aqui sou
+        responsável tanto por aplicativo B2B, quanto por aplicativos B2C. São
+        eles...
+      </span>
+
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
+        <Marker>Clube de vantagens Zaal</Marker> - um aplicativo de cashback e
+        outras vantagens. <Marker>Zaal resultado</Marker> - um aplicativo para
+        mostrar os resultados diário, semanal e mensal da sua empresa.{' '}
+      </span>
+
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
+        <Marker>Zaal quiosque</Marker> - um aplicativo de fluxo e gerenciamento
+        de vendas internas. <Marker>Zaal beta</Marker> - um sistema completo de
+        gerenciamento de comércios com notas fiscais.
+      </span>
+
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
+        Além desses eu ainda tenho meus <Marker>projetos pessoais</Marker>,
+        clique <Push href="https://www.github.com/andres-dos-santos">aqui</Push>
         .
       </span>
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
-        I have 1 published application so far.
+        Você pode me encontrar no{' '}
+        <span className="underline text-blue-500">
+          <a href="https://www.linkedin.com/in/andres-dosantos" target="_blank">
+            LinkedIn
+          </a>
+        </span>
+        ,{' '}
+        <span className="underline text-blue-500">
+          <a href="https://www.linkedin.com/in/andres-dosantos" target="_blank">
+            Gmail
+          </a>
+        </span>
+        ,{' '}
+        <span className="underline text-blue-500">
+          <a href="https://www.github.com/andres-dos-santos" target="_blank">
+            Github
+          </a>
+        </span>{' '}
+        e{' '}
+        <span className="underline text-blue-500">
+          <a href="https://www.github.com/andres-dos-santos" target="_blank">
+            X (antigo Twitter)
+          </a>
+        </span>
+        , tento sempre manter eles sempre atualizados.
       </span>
 
-      <hr />
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
+        Caso tenha interesse em ver meu <Marker>currículo</Marker> pode baixar
+        ele <Push href="https://www.github.com/andres-dos-santos">aqui</Push>.
+        Se quiser saber o meu <Marker>plano de estudos para 2025</Marker> pode
+        clicar <Link href="/study-plan">aqui</Link>.
+      </span>
 
-      <ul className="mt-10">
-        <li className="flex items-center gap-x-5">
-          <Image
-            src="/zaal-result-logo.png"
-            alt=""
-            width={60}
-            height={60}
-            quality={100}
-          />
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
+        Todos esses sistemas me fizeram acumular conhecimentos em{' '}
+        <Marker>estrutura de dados e algoritmos</Marker>,{' '}
+        <Marker>programação web (React/Next)</Marker> e{' '}
+        <Marker>mobile (React Native)</Marker>.
+      </span>
 
-          <div className="flex flex-col">
-            <strong className="text-xs font-semibold -tracking-wider mb-1">
-              ZAAL RESULTADO
-            </strong>
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
+        Além disso tenho conhecimentos em <Marker>Firebase</Marker>,{' '}
+        <Marker>Supabase</Marker>, IA, API de terceiros, um pouco sobre{' '}
+        <Marker>AWS</Marker>, <Marker>GCP</Marker>, conhecimento avançado em{' '}
+        <Marker>NodeJS</Marker>, desenvolvimento{' '}
+        <Marker>Android (com Jetpack Compose)</Marker>, <Marker>Docker</Marker>,{' '}
+        <Marker>Prisma</Marker>, etc.
+      </span>
 
-            <span className="text-xs text-zinc-500 leading-4">
-              <span className="font-medium">(Android/iOS)</span> Zaal Resultado
-              is the ideal application for companies that want to monitor and
-              analyze their performance effectively.
-            </span>
-          </div>
-        </li>
-      </ul>
+      <span className="text-sm block leading-7 -tracking-wide">
+        Venha falar comigo!
+      </span>
     </div>
   )
 }

@@ -42,8 +42,8 @@
     @apply text-zinc-800 dark:text-zinc-100 font-serif text-[13px] font-normal p-1 bg-zinc-100 dark:bg-zinc-800 overflow-x-visible;
   }
 
-  a {
-    @apply text-blue-500;
+  a { 
+    @apply text-blue-500 underline;
   }
 
   blockquote {
