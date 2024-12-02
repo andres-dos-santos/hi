@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import { ComponentProps } from 'react'
 
@@ -90,7 +91,9 @@ export default async function _page() {
         </div>
       </header>
 
-      <span className="text-sm block mb-10 mt-5 leading-7 -tracking-wide">
+      <span className="text-zinc-700 text-[13px] my-5">Experiência</span>
+
+      <span className="text-sm block mb-10 leading-7 -tracking-wide">
         Meu nome é Andres, tenho <Marker>+ de 4 anos</Marker> de experiência com
         programação <Marker>frontend</Marker> e <Marker>mobile</Marker>. Sou
         aluno de <Marker>Sistemas de Informações</Marker> e me dedico todos os
@@ -109,23 +112,65 @@ export default async function _page() {
         eles...
       </span>
 
-      <span className="text-sm block mb-10 leading-7 -tracking-wide">
-        <Marker>Clube de vantagens Zaal</Marker> - um aplicativo de cashback e
-        outras vantagens. <Marker>Zaal resultado</Marker> - um aplicativo para
-        mostrar os resultados diário, semanal e mensal da sua empresa.{' '}
+      <span className="text-zinc-700 text-[13px] mb-5">
+        Projetos da minha empresa atual
       </span>
 
-      <span className="text-sm block mb-10 leading-7 -tracking-wide">
-        <Marker>Zaal quiosque</Marker> - um aplicativo de fluxo e gerenciamento
-        de vendas internas. <Marker>Zaal beta</Marker> - um sistema completo de
-        gerenciamento de comércios com notas fiscais.
-      </span>
+      <ul className="text-sm flex flex-col mb-10 leading-7 gap-2.5 -tracking-wide">
+        <Link href="#" className="flex items-center">
+          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
+            <ArrowUpRight className="size-3" />
+            Clube de vantagens Zaal
+          </span>
+        </Link>
+
+        <Link href="#" className="flex items-center">
+          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
+            <ArrowUpRight className="size-3" />
+            Zaal resultado
+          </span>
+        </Link>
+
+        <Link href="#" className="flex items-center">
+          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
+            <ArrowUpRight className="size-3" />
+            Zaal quiosque
+          </span>
+        </Link>
+      </ul>
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
         Além desses eu ainda tenho meus <Marker>projetos pessoais</Marker>,
         clique <Push href="https://www.github.com/andres-dos-santos">aqui</Push>
         .
       </span>
+
+      <span className="text-zinc-700 text-[13px] mb-5">Projetos pessoais</span>
+
+      <ul className="text-sm flex flex-col mb-10 leading-7 gap-2.5 -tracking-wide">
+        <Link href="#" className="flex items-center">
+          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
+            <ArrowUpRight className="size-3" />
+            Encurtai
+          </span>
+        </Link>
+
+        <Link href="#" className="flex items-center">
+          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
+            <ArrowUpRight className="size-3" />
+            Find-Me-A-Dog
+          </span>
+        </Link>
+
+        <Link href="#" className="flex items-center">
+          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
+            <ArrowUpRight className="size-3" />
+            dopa
+          </span>
+        </Link>
+      </ul>
+
+      <span className="text-zinc-700 text-[13px] mb-5">Contatos</span>
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
         Você pode me encontrar no{' '}
@@ -168,6 +213,8 @@ export default async function _page() {
         </Link>
         .
       </span>
+
+      <span className="text-zinc-700 text-[13px] mb-5">Habilidades</span>
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
         Todos esses sistemas me fizeram acumular conhecimentos em{' '}
