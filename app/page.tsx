@@ -66,6 +66,10 @@ function Push(props: ComponentProps<'a'>) {
   )
 }
 
+const email = 'andres.dosantosbritoamaral@gmail.com'
+const subject = 'Oi Andres.'
+const body = 'Vim pelo seu site e quero iniciar uma conversa com você.'
+
 export default async function _page() {
   return (
     <div className="flex flex-col pb-10">
@@ -148,7 +152,11 @@ export default async function _page() {
       <span className="text-zinc-700 text-[13px] mb-5">Projetos pessoais</span>
 
       <ul className="text-sm flex flex-col mb-10 leading-7 gap-2.5 -tracking-wide">
-        <Link href="#" className="flex items-center">
+        <Link
+          href="https://encurtaiapp.vercel.app/"
+          target="__blank"
+          className="flex items-center"
+        >
           <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
             <ArrowUpRight className="size-3" />
             Encurtai
@@ -181,7 +189,10 @@ export default async function _page() {
         </span>
         ,{' '}
         <span className="underline text-blue-500">
-          <a href="https://www.linkedin.com/in/andres-dosantos" target="_blank">
+          <a
+            href={`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`}
+            target="_blank"
+          >
             Gmail
           </a>
         </span>
@@ -193,7 +204,7 @@ export default async function _page() {
         </span>{' '}
         e{' '}
         <span className="underline text-blue-500">
-          <a href="https://www.github.com/andres-dos-santos" target="_blank">
+          <a href="https://x.com/andresdo_santos" target="_blank">
             X (antigo Twitter)
           </a>
         </span>
