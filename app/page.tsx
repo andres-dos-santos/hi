@@ -153,7 +153,7 @@ export default async function _page() {
 
       <ul className="text-sm flex flex-col mb-10 leading-7 gap-2.5 -tracking-wide">
         <Link
-          href="https://encurtaiapp.vercel.app/"
+          href="https://linkei.vercel.app"
           target="__blank"
           className="flex items-center"
         >
