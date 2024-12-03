@@ -159,7 +159,7 @@ export default async function _page() {
         >
           <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
             <ArrowUpRight className="size-3" />
-            Encurtai
+            Linkei
           </span>
         </Link>
 
