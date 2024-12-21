@@ -12,6 +12,7 @@ const config: Config = {
       fontFamily: {
         sans: 'var(--font-inter)',
         serif: 'var(--font-code)',
+        'demi-bold': 'var(--font-tt-demi-bold)',
       },
     },
   },

@@ -123,37 +123,21 @@ export default async function _page() {
       <ul className="text-sm flex flex-col mb-10 leading-7 gap-2.5 -tracking-wide">
         <Link href="#" className="flex items-center">
           <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
-            <ArrowUpRight className="size-3" />
-            Clube de vantagens Zaal
-          </span>
-        </Link>
-
-        <Link href="#" className="flex items-center">
-          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
-            <ArrowUpRight className="size-3" />
-            Zaal resultado
-          </span>
-        </Link>
-
-        <Link href="#" className="flex items-center">
-          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
-            <ArrowUpRight className="size-3" />
-            Zaal quiosque
+            <ArrowUpRight className="size-3" />3 projetos
           </span>
         </Link>
       </ul>
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
-        Além desses eu ainda tenho meus <Marker>projetos pessoais</Marker>,
-        clique <Push href="https://www.github.com/andres-dos-santos">aqui</Push>
-        .
+        Além desses eu ainda tenho meus <Marker>projetos pessoais</Marker>, são
+        esses.
       </span>
 
       <span className="text-zinc-700 text-[13px] mb-5">Projetos pessoais</span>
 
       <ul className="text-sm flex flex-col mb-10 leading-7 gap-2.5 -tracking-wide">
         <Link
-          href="https://linkei.vercel.app"
+          href="https://lkei.vercel.app"
           target="__blank"
           className="flex items-center"
         >
@@ -166,14 +150,7 @@ export default async function _page() {
         <Link href="#" className="flex items-center">
           <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
             <ArrowUpRight className="size-3" />
-            Find-Me-A-Dog
-          </span>
-        </Link>
-
-        <Link href="#" className="flex items-center">
-          <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
-            <ArrowUpRight className="size-3" />
-            dopa
+            Gept (projeto com IA)
           </span>
         </Link>
       </ul>
@@ -213,8 +190,11 @@ export default async function _page() {
 
       <span className="text-sm block mb-10 leading-7 -tracking-wide">
         Caso tenha interesse em ver meu <Marker>currículo</Marker> pode baixar
-        ele <Push href="https://www.github.com/andres-dos-santos">aqui</Push>.
-        Se quiser saber o meu <Marker>plano de estudos para 2025</Marker> pode
+        ele{' '}
+        <Push href="/resume.pdf" download="resume.pdf">
+          aqui
+        </Push>
+        . Se quiser saber o meu <Marker>plano de estudos para 2025</Marker> pode
         clicar{' '}
         <Link
           href="https://asba.notion.site/learning-1423ce0317be808a902ff2f6ad071b21"

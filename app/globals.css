@@ -10,6 +10,13 @@
     width: 100vw;
   }
 
+  .scroll-mandatory {
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+  }
+
   body {
     text-rendering: geometricPrecision;
   }
