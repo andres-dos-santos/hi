@@ -49,13 +49,13 @@
 // }
 
 export default async function _page() {
-  return (
-    <div className="flex flex-col h-screen">
-      <div className="flex items-baseline gap-5">
-        <h6 className="font-bold -tracking-wider">Plano de estudos</h6>
-      </div>
+	return (
+		<div className="flex flex-col h-screen">
+			<div className="flex items-baseline gap-5">
+				<h6 className="font-bold -tracking-wider">Plano de estudos</h6>
+			</div>
 
-      <hr />
-    </div>
-  )
+			<hr />
+		</div>
+	);
 }

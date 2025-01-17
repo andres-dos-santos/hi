@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.8",
@@ -20,7 +19,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@rocketseat/eslint-config": "^2.1.0",
+    "@biomejs/biome": "1.9.4",
     "@tailwindcss/typography": "^0.5.12",
     "@types/google.maps": "^3.55.12",
     "@types/node": "^22.10.1",
