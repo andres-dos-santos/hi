@@ -121,7 +121,7 @@ export default async function _page() {
       </span>
 
       <ul className="text-sm flex flex-col mb-10 leading-7 gap-2.5 -tracking-wide">
-        <Link href="#" className="flex items-center">
+        <Link href="https://play.google.com/store/apps/developer?id=Zaal+Tecnologia+da+Informa%C3%A7%C3%A3o+LTDA.&hl=pt_BR" className="flex items-center">
           <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
             <ArrowUpRight className="size-3" />3 projetos
           </span>
@@ -147,12 +147,12 @@ export default async function _page() {
           </span>
         </Link>
 
-        <Link href="#" className="flex items-center">
+        {/* <Link href="#" className="flex items-center">
           <span className="hover:bg-blue-500/20 pl-1.5 pr-2.5 flex items-center">
             <ArrowUpRight className="size-3" />
             Gept (projeto com IA)
           </span>
-        </Link>
+        </Link> */}
       </ul>
 
       <span className="text-zinc-700 text-[13px] mb-5">Contatos</span>
