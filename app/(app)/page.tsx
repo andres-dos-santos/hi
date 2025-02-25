@@ -8,7 +8,7 @@ const projects = [
 	{
 		logo: require('../../public/21-logo.png'),
 		name: '21',
-		href: 'https://lkei.vercel.app',
+		href: 'https://21-thoughts.vercel.app/home',
 	},
 	{
 		logo: require('../../public/linkei-logo.png'),
