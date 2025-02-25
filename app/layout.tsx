@@ -1,11 +1,15 @@
 /* eslint-disable camelcase */
 import type { Metadata } from "next";
-import { Inter, IBM_Plex_Mono } from "next/font/google";
+import { Barlow, IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const barlow = Barlow({
+	subsets: ["latin"],
+	variable: "--font-barlow",
+	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 const plexMono = IBM_Plex_Mono({
 	subsets: ["latin"],
 	weight: ["500"],
@@ -31,7 +35,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${inter.variable} ${TTDemiBold.variable} ${plexMono.variable} relative`}
+			className={`${barlow.variable} ${TTDemiBold.variable} ${plexMono.variable} relative`}
 		>
 			<body>{children}</body>
 		</html>
