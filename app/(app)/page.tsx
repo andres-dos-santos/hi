@@ -1,8 +1,7 @@
-import { ArrowUpRight, Twitter } from 'lucide-react'
+import dayjs from 'dayjs'
+import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-
-import ZaalLogo from '../../public/logo-zaal.svg'
 
 const projects = [
 	{
@@ -17,7 +16,44 @@ const projects = [
 	},
 ]
 
-export default function Home() {
+async function getPosts(): Promise<{ data: { posts: Post[] } }> {
+	const query = `
+		query {
+			posts {
+				id
+				title
+				slug
+				html { html }
+				createdAt
+			}
+		}
+	`
+
+	const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL ?? '', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ query }),
+		next: { revalidate: 3600 },
+	})
+
+	const data = await response.json()
+
+	return data
+}
+
+type Post = {
+	id: string
+	slug: string
+	title: string
+	html: {
+		html: string
+	}
+	createdAt: string
+}
+
+export default async function Home() {
+	const { data } = await getPosts()
+
 	return (
 		<div className="flex items-center justify-center">
 			{/* <div className="fixed top-0 right-0 left-0 p-6 backdrop-blur-md bg-[#F5F5F5]/50" /> */}
@@ -183,7 +219,7 @@ export default function Home() {
 				<span className="my-20 block text-[13px] text-zinc-700/85">. . .</span>
 
 				<span className="block text-[11px] leading-[26px] font-medium text-zinc-900">
-					PROJETOS
+					PROJETOS PESSOAIS
 				</span>
 
 				<ul className="grid grid-cols-4 grid-rows-4 gap-5 h-[240px] mt-5">
@@ -273,20 +309,27 @@ export default function Home() {
 
 				<span className="my-20 block text-[13px] text-zinc-700/85">. . .</span>
 
-				<span className="block text-[11px] leading-[26px] font-medium text-zinc-900">
+				{/* <span className="block text-[11px] leading-[26px] font-medium text-zinc-900">
 					ESTUDOS
 				</span>
 
 				<ul>
-					<li className="flex items-center justify-between mt-5">
-						<span className="w-[30%] text-[13px] leading-[26px] text-zinc-500/90">
-							Fev 21
-						</span>
-						<span className="flex items-center w-[60%] text-[13px] leading-[26px] text-zinc-900">
-							<ArrowUpRight className="size-3" /> Let's talk about React 19
-						</span>
-					</li>
-				</ul>
+					{data.posts.map((item) => (
+						<li key={item.id}>
+							<Link
+								href={`/post/${item.slug}`}
+								className="flex items-center justify-between mt-5"
+							>
+								<span className="w-[30%] text-[13px] leading-[26px] text-zinc-500/90">
+									{dayjs(item.createdAt).format('MMM DD')}
+								</span>
+								<span className="flex items-center w-[60%] text-[13px] leading-[26px] text-zinc-900 hover:underline">
+									<ArrowUpRight className="size-3" /> {item.title}
+								</span>
+							</Link>
+						</li>
+					))}
+				</ul> */}
 
 				<span className="my-20 block text-[13px] text-zinc-700/85">. . .</span>
 

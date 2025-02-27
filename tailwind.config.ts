@@ -1,21 +1,29 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
-	darkMode: "class",
+	darkMode: 'class',
 	content: [
-		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./app/**/*.{js,ts,jsx,tsx,mdx}",
+		'./pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./app/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
 		extend: {
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: '100ch', // add required value here
+					},
+				},
+			},
 			fontFamily: {
-				sans: "var(--font-barlow)",
-				serif: "var(--font-code)",
-				"demi-bold": "var(--font-tt-demi-bold)",
+				sans: 'var(--font-barlow)',
+				serif: 'var(--font-code)',
+				'demi-bold': 'var(--font-tt-demi-bold)',
+				cormorant: 'var(--font-cormorant)',
 			},
 		},
 	},
-	plugins: [require("@tailwindcss/typography")],
-};
-export default config;
+	plugins: [require('@tailwindcss/typography')],
+}
+export default config
