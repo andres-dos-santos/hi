@@ -15,30 +15,30 @@ const projects = [
 	},
 ]
 
-async function getPosts(): Promise<{ data: { posts: Post[] } }> {
-	const query = `
-		query {
-			posts {
-				id
-				title
-				slug
-				html { html }
-				createdAt
-			}
-		}
-	`
+// async function getPosts(): Promise<{ data: { posts: Post[] } }> {
+// 	const query = `
+// 		query {
+// 			posts {
+// 				id
+// 				title
+// 				slug
+// 				html { html }
+// 				createdAt
+// 			}
+// 		}
+// 	`
 
-	const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL ?? '', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify({ query }),
-		next: { revalidate: 3600 },
-	})
+// 	const response = await fetch(process.env.NEXT_PUBLIC_HYGRAPH_URL ?? '', {
+// 		method: 'POST',
+// 		headers: { 'Content-Type': 'application/json' },
+// 		body: JSON.stringify({ query }),
+// 		next: { revalidate: 3600 },
+// 	})
 
-	const data = await response.json()
+// 	const data = await response.json()
 
-	return data
-}
+// 	return data
+// }
 
 type Post = {
 	id: string
@@ -51,7 +51,7 @@ type Post = {
 }
 
 export default async function Home() {
-	const { data } = await getPosts()
+	// const { data } = await getPosts()
 
 	return (
 		<div className="flex items-center justify-center">
