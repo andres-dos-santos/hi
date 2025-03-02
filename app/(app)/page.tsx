@@ -1,3 +1,4 @@
+import { Name } from '@/components/name'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,6 +13,21 @@ const projects = [
 		logo: require('../../public/linkei-logo.png'),
 		name: 'Linkei',
 		href: 'https://lkei.vercel.app',
+	},
+	{
+		logo: require('../../public/benefits-club-logo.png'),
+		name: 'Vantagens',
+		href: 'https://play.google.com/store/apps/details?id=com.zaal.clubedevantagens',
+	},
+	{
+		logo: require('../../public/kiosk-logo.png'),
+		name: 'Quiosque',
+		href: 'https://play.google.com/store/apps/details?id=com.zaal.quiosqueapp',
+	},
+	{
+		logo: require('../../public/result-logo.png'),
+		name: 'Resultado',
+		href: 'https://play.google.com/store/apps/details?id=com.zaal.result',
 	},
 ]
 
@@ -80,14 +96,18 @@ export default async function Home() {
 			</div>
 
 			<div className="flex flex-col max-w-[500px] mx-auto py-[200px]">
-				<h1 className="text-zinc-800/90 font-medium text-2xl -tracking-wide">
-					Andres dos Santos
-				</h1>
-				<span className="mt-2.5 block text-[13px] text-zinc-900/85">
+				
+				<Name />
+
+				<div className='h-px w-10 my-10 bg-zinc-200'></div>
+
+				<span className="italic block text-[13px] text-zinc-900/85">
 					Full stack developer with NodeJS, React & React Native.
 				</span>
 
-				<span className="mt-14 block text-[13px] text-zinc-900/90">
+				<div className='h-px w-10 my-10 bg-zinc-200'></div>
+
+				<span className="block text-[13px] text-zinc-900/90">
 					Olá 👋.
 				</span>
 
@@ -117,7 +137,7 @@ export default async function Home() {
 					</li>
 				</ul> */}
 
-				<footer className="mt-14 flex items-center gap-5">
+				<nav className="mt-14 flex items-center gap-5">
 					<Link target="__blank" href="https://x.com/andresdo_santos">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -158,30 +178,6 @@ export default async function Home() {
 						</svg>
 					</Link>
 
-					<Link target="__blank" href="https://wa.me/5524993154394">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-							width="18"
-							height="18"
-							color="#000000"
-							fill="none"
-						>
-							<title>Whatsapp logo</title>
-							<path
-								d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.3789 2.27907 14.6926 2.78382 15.8877C3.06278 16.5481 3.20226 16.8784 3.21953 17.128C3.2368 17.3776 3.16334 17.6521 3.01642 18.2012L2 22L5.79877 20.9836C6.34788 20.8367 6.62244 20.7632 6.87202 20.7805C7.12161 20.7977 7.45185 20.9372 8.11235 21.2162C9.30745 21.7209 10.6211 22 12 22Z"
-								stroke="currentColor"
-								strokeWidth="1.5"
-								strokeLinejoin="round"
-							/>
-							<path
-								d="M8.58815 12.3773L9.45909 11.2956C9.82616 10.8397 10.2799 10.4153 10.3155 9.80826C10.3244 9.65494 10.2166 8.96657 10.0008 7.58986C9.91601 7.04881 9.41086 7 8.97332 7C8.40314 7 8.11805 7 7.83495 7.12931C7.47714 7.29275 7.10979 7.75231 7.02917 8.13733C6.96539 8.44196 7.01279 8.65187 7.10759 9.07169C7.51023 10.8548 8.45481 12.6158 9.91948 14.0805C11.3842 15.5452 13.1452 16.4898 14.9283 16.8924C15.3481 16.9872 15.558 17.0346 15.8627 16.9708C16.2477 16.8902 16.7072 16.5229 16.8707 16.165C17 15.8819 17 15.5969 17 15.0267C17 14.5891 16.9512 14.084 16.4101 13.9992C15.0334 13.7834 14.3451 13.6756 14.1917 13.6845C13.5847 13.7201 13.1603 14.1738 12.7044 14.5409L11.6227 15.4118"
-								stroke="currentColor"
-								strokeWidth="1.5"
-							/>
-						</svg>
-					</Link>
-
 					<Link
 						target="__blank"
 						href="https://www.linkedin.com/in/andres-dosantos/"
@@ -213,12 +209,12 @@ export default async function Home() {
 							/>
 						</svg>
 					</Link>
-				</footer>
+				</nav>
 
 				<span className="my-20 block text-[13px] text-zinc-700/85">. . .</span>
 
 				<span className="block text-[11px] leading-[26px] font-medium text-zinc-900">
-					PROJETOS PESSOAIS
+					NO QUE EU TRABALHEI
 				</span>
 
 				<ul className="grid grid-cols-4 grid-rows-4 gap-5 h-[240px] mt-5">
@@ -230,19 +226,24 @@ export default async function Home() {
 							<Link
 								href={project.href}
 								className="h-full w-full flex items-center justify-center group relative"
+								target='_blank'
 							>
-								<div className="absolute -top-5 bg-zinc-700 flex items-center justify-center shadow-lg rounded-xl group-hover:scale-110 scale-0 transition-all duration-500 h-10 w-[75%]">
-									<span className="font-light text-xs text-white">
+								<div className="absolute flex-col -top-8 bg-zinc-700 flex p-5 items-center line-clamp-2 text-center justify-center shadow-lg rounded-xl group-hover:scale-110 scale-0 transition-all duration-500 h-14 min-w-[75%]">
+									<span className="font-medium text-[13px] text-white">
 										{project.name}
+									</span>
+									<span className="font-medium text-[9px] uppercase text-zinc-400">
+										developer
 									</span>
 								</div>
 
-								<div className="h-14 w-14 rounded-[16px] border flex items-center justify-center border-zinc-200/50 p-0.5">
+								<div className="h-[80px] w-[80px] rounded-[16px] flex items-center justify-center">
 									<Image
 										src={project.logo}
-										height={44}
-										width={44}
-										className="w-[44px] h-[44px] rounded-xl"
+										height={80}
+										width={80}
+										quality={100}
+										className="w-[80px] h-[80px] rounded-xl"
 										alt=""
 									/>
 								</div>
@@ -330,7 +331,7 @@ export default async function Home() {
 					))}
 				</ul> */}
 
-				<span className="my-20 block text-[13px] text-zinc-700/85">. . .</span>
+				{/* <span className="my-20 block text-[13px] text-zinc-700/85">. . .</span> */}
 
 				<div className="flex items-center justify-between">
 					<span className="text-zinc-400 text-sm -tracking-wide">
