@@ -7,26 +7,32 @@ const projects = [
 	{
 		logo: require('../../public/21-logo.png'),
 		name: '21',
+		position: 'Full stack developer',
 		href: 'https://21-thoughts.vercel.app/home',
+
 	},
 	{
 		logo: require('../../public/linkei-logo.png'),
 		name: 'Linkei',
+		position: 'Web developer',
 		href: 'https://lkei.vercel.app',
 	},
 	{
 		logo: require('../../public/benefits-club-logo.png'),
 		name: 'Vantagens',
+		position: 'Mobile developer',
 		href: 'https://play.google.com/store/apps/details?id=com.zaal.clubedevantagens',
 	},
 	{
 		logo: require('../../public/kiosk-logo.png'),
 		name: 'Quiosque',
+		position: 'Mobile developer',
 		href: 'https://play.google.com/store/apps/details?id=com.zaal.quiosqueapp',
 	},
 	{
 		logo: require('../../public/result-logo.png'),
 		name: 'Resultado',
+		position: 'Mobile developer',
 		href: 'https://play.google.com/store/apps/details?id=com.zaal.result',
 	},
 ]
@@ -233,7 +239,7 @@ export default async function Home() {
 										{project.name}
 									</span>
 									<span className="font-medium text-[9px] uppercase text-zinc-400">
-										developer
+										{project.position}
 									</span>
 								</div>
 
