@@ -217,11 +217,11 @@ export default async function Home() {
 					NO QUE EU TRABALHEI
 				</span>
 
-				<ul className="grid grid-cols-4 grid-rows-4 gap-5 h-[240px] mt-5">
+				<ul className="grid grid-cols-3 sm:grid-cols-4 gap-5 h-[240px] mt-5">
 					{projects.map((project) => (
 						<li
 							key={project.name}
-							className="rounded-2xl flex flex-col group items-center justify-center row-span-2 border hover:border-zinc-200/30 hover:bg-zinc-200/30 relative cursor-pointer hover:scale-105 transition-all duration-500"
+							className="rounded-2xl flex h-[100px] sm:h-auto w-[100px] sm:w-auto flex-col group items-center justify-center border hover:border-zinc-200/30 hover:bg-zinc-200/30 relative cursor-pointer hover:scale-105 transition-all duration-500"
 						>
 							<Link
 								href={project.href}
@@ -263,11 +263,11 @@ export default async function Home() {
 				</span>
 
 				<ul>
-					<li className="flex items-center justify-between mt-5">
-						<span className="w-[30%] text-[13px] leading-[26px] text-zinc-500/90">
+					<li className="flex sm:flex-row flex-col items-start w-full sm:items-center justify-between mt-5">
+						<span className="w-[30%] text-[13px] leading-[26px] text-zinc-500/90 mt-3 block sm:mt-0">
 							2021
 						</span>
-						<span className="flex items-center w-[60%] text-[13px] leading-[26px] text-zinc-900">
+						<span className="flex items-center w-full sm:w-[60%] text-[13px] leading-[26px] text-zinc-900">
 							Software developer PL at{' '}
 							<Link
 								href="https://zaal.com.br"
@@ -285,11 +285,11 @@ export default async function Home() {
 						</span>
 					</li>
 
-					<li className="flex items-center justify-between mt-5">
-						<span className="w-[30%] text-[13px] leading-[26px] text-zinc-500/90">
+					<li className="flex sm:flex-row flex-col items-start w-full sm:items-center justify-between mt-5">
+						<span className="w-[30%] text-[13px] leading-[26px] text-zinc-500/90 mt-3 block sm:mt-0">
 							2020 - 2021
 						</span>
-						<span className="flex items-center w-[60%] text-[13px] leading-[26px] text-zinc-900">
+						<span className="flex items-center w-full sm:w-[60%] text-[13px] leading-[26px] text-zinc-900">
 							Software developer JR at{' '}
 							<Link
 								href="https://zaal.com.br"
