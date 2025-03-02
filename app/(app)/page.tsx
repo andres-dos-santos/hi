@@ -259,7 +259,7 @@ export default async function Home() {
 				<span className="my-20 block text-[13px] text-zinc-700/85">. . .</span>
 
 				<span className="block text-[11px] leading-[26px] font-medium text-zinc-900">
-					EXPERIÊNCIA DE TRABALHO
+					EXPERIÊNCIAS DE TRABALHOS
 				</span>
 
 				<ul>
