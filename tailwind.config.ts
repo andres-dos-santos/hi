@@ -18,7 +18,7 @@ const config: Config = {
 			},
 			fontFamily: {
 				sans: 'var(--font-barlow)',
-				serif: 'var(--font-code)',
+				code: 'var(--font-code)',
 				'demi-bold': 'var(--font-tt-demi-bold)',
 				cormorant: 'var(--font-cormorant)',
 			},

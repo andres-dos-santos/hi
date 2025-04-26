@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  body::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    @apply bg-zinc-200;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    @apply border-4 border-zinc-200 rounded bg-zinc-400;
+  }
+
   .scroll-snap {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
@@ -21,16 +33,16 @@
     text-rendering: geometricPrecision;
   }
 
-  p {
-    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] mb-10;
+  .prose p {
+    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[30px] mb-10;
   }
 
   strong {
     @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100;
   }
 
-  h3 {
-    @apply text-zinc-800 dark:text-zinc-100 -tracking-wide block text-xl font-semibold;
+  .prose h3 strong {
+    @apply text-zinc-800 dark:text-zinc-100 tracking-widest block text-sm font-code font-bold uppercase my-20;
   }
 
   #article ul {
@@ -46,12 +58,12 @@
   }
 
   code {
-    @apply text-zinc-800 dark:text-zinc-100 font-serif text-[13px] font-normal p-1 bg-zinc-100 dark:bg-zinc-800 overflow-x-visible;
+    @apply text-zinc-800 dark:text-zinc-100 font-code text-[13px] font-light p-1 bg-zinc-100 dark:bg-zinc-800 overflow-x-visible;
   }
 
-  /* a { 
-    @apply text-blue-500 underline;
-  } */
+  .prose p a { 
+    @apply text-sm sm:text-[15px] text-blue-500 font-normal lowercase leading-[28px] sm:leading-[30px] mb-10;
+  }
 
   blockquote {
     @apply border-l-8 border-zinc-100 dark:border-zinc-700/50 p-5;
