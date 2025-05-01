@@ -57,10 +57,6 @@
     @apply ml-2 text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] font-normal;
   }
 
-  code {
-    @apply text-zinc-800 dark:text-zinc-100 font-code text-[13px] font-light p-1 bg-zinc-100 dark:bg-zinc-800 overflow-x-visible;
-  }
-
   .prose p a { 
     @apply text-sm sm:text-[15px] text-blue-500 font-normal lowercase leading-[28px] sm:leading-[30px] mb-10;
   }
@@ -73,7 +69,11 @@
     @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] mb-10;
   }
 
-  pre {
-    @apply font-serif bg-zinc-100 dark:bg-zinc-800 text-[13px] px-5 py-8 rounded-md mb-5;
+  .prose pre {
+    @apply font-code text-[11px] p-5 rounded-xl mb-10;
+  }
+
+  .prose code {
+    @apply font-code text-[12px];
   }
 }

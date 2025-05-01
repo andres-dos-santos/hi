@@ -40,11 +40,8 @@ async function getStudies() {
 
 export async function Study() {
 	const { data } = await getStudies()
-	console.log(data)
 
 	const posts = data.posts
-
-	// return null
 
 	return (
 		<>
@@ -61,7 +58,7 @@ export async function Study() {
 								{dayjs(item.createdAt).format('MMM DD')}
 							</span>
 							<div className="flex items-center justify-end text-end ml-auto w-[70%] text-[13px] leading-[26px] text-zinc-900 hover:underline">
-								<ArrowUpRight className="size-3" /> {item.title}
+								{item.title}
 							</div>
 						</Link>
 					</li>

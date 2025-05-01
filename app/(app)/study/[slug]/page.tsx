@@ -1,5 +1,8 @@
 import { Dots } from '@/components/dots'
+import dayjs from 'dayjs'
+import { ArrowLeft } from 'lucide-react'
 import { Cormorant } from 'next/font/google'
+import Link from 'next/link'
 
 const cormorant = Cormorant({
 	subsets: ['latin'],
@@ -46,8 +49,17 @@ export default async function Page(props: {
 
 	const post = data.posts[0]
 
+	console.log(post.createdAt)
+
 	return (
 		<>
+			<Link href="/" className="mb-20 flex items-center gap-5">
+				<ArrowLeft className="size-3" />
+				<span className="text-xs">
+					{dayjs(post.createdAt).format('DD/MM/YY')}
+				</span>
+			</Link>
+
 			<h1
 				className={`${cormorant.variable} font-cormorant text-zinc-800/90 font-medium text-4xl -tracking-wide`}
 				// key={item}

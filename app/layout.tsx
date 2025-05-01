@@ -20,7 +20,7 @@ const cormorant = Cormorant({
 
 const plexMono = IBM_Plex_Mono({
 	subsets: ['latin'],
-	weight: ['500'],
+	weight: ['400'],
 	variable: '--font-code',
 })
 
