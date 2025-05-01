@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import dayjs from 'dayjs'
-import { ArrowUpRight } from 'lucide-react'
 
 import { Title } from './title'
 
@@ -28,6 +27,9 @@ async function getStudies() {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+			},
+			next: {
+				revalidate: 60,
 			},
 			body: JSON.stringify({ query }),
 		},
