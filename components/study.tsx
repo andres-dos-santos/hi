@@ -47,7 +47,7 @@ export async function Study() {
 
 	return (
 		<>
-			<Title>WHAT I STUDIED</Title>
+			<Title>What I studied</Title>
 
 			<ul>
 				{posts.map((item: Post) => (

@@ -16,7 +16,7 @@ const projects = [
 export function Work() {
 	return (
 		<>
-			<Title>WHAT I WORKED ON</Title>
+			<Title>What I worked on</Title>
 
 			<ul className="mt-5">
 				{projects.map((project) => (

@@ -21,7 +21,7 @@ const experiences = [
 export function Experience() {
 	return (
 		<>
-			<Title>WORK EXPERIENCES</Title>
+			<Title>Work experiences</Title>
 
 			<ul>
 				{experiences.map((item) => (
