@@ -1,12 +1,10 @@
 import { Dots } from '@/components/dots'
+import { DownloadCV } from '@/components/download-cv'
 import { Experience } from '@/components/experience'
 import { Name } from '@/components/name'
 import { Study } from '@/components/study'
-import { Title } from '@/components/title'
 import { Work } from '@/components/work'
-import dayjs from 'dayjs'
-import { ArrowUpRight, File, FileText } from 'lucide-react'
-import Image from 'next/image'
+import { FileText } from 'lucide-react'
 import Link from 'next/link'
 
 // async function getPosts(): Promise<{ data: { posts: Post[] } }> {
@@ -33,16 +31,6 @@ import Link from 'next/link'
 
 // 	return data
 // }
-
-type Post = {
-	id: string
-	slug: string
-	title: string
-	html: {
-		html: string
-	}
-	createdAt: string
-}
 
 export default async function Home() {
 	// const { data } = await getPosts()
@@ -129,13 +117,7 @@ export default async function Home() {
 					</svg>
 				</Link>
 
-				<button
-					className="flex items-center gap-1.5 justify-center ml-auto h-9 w-40 border rounded-xl shadow-sm hover:border-zinc-300"
-					type="button"
-				>
-					<FileText className="size-3.5 text-zinc-500" />
-					<span className="text-xs">Download my CV</span>
-				</button>
+				<DownloadCV />
 			</nav>
 
 			<Dots />
