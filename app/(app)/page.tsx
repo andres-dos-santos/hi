@@ -3,6 +3,7 @@ import { DownloadCV } from '@/components/download-cv'
 import { Experience } from '@/components/experience'
 import { GithubLink } from '@/components/github-link'
 import { LinkedinLink } from '@/components/linkedin-link'
+import { Localization } from '@/components/localization'
 import { Name } from '@/components/name'
 import { Study } from '@/components/study'
 import { Work } from '@/components/work'
@@ -85,6 +86,10 @@ export default async function Home() {
 			<Dots />
 
 			<Study />
+
+			<Dots />
+
+			<Localization />
 
 			<Dots />
 
