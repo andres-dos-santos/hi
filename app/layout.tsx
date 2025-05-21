@@ -45,7 +45,7 @@ export default function RootLayout({
 			lang="en"
 			className={`${barlow.variable} ${cormorant.variable} ${TTDemiBold.variable} ${plexMono.variable}`}
 		>
-			<body className="min-h-screen max-w-[500px] w-[500px] mx-auto py-[200px]">
+			<body className="min-h-screen max-w-[500px] w-[500px] mx-auto py-[120px]">
 				{children}
 			</body>
 		</html>
