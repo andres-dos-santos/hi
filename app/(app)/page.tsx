@@ -3,12 +3,10 @@ import { DownloadCV } from '@/components/download-cv'
 import { Experience } from '@/components/experience'
 import { GithubLink } from '@/components/github-link'
 import { LinkedinLink } from '@/components/linkedin-link'
-import { Localization } from '@/components/localization'
+import { MapRender } from '@/components/map-render'
 import { Name } from '@/components/name'
 import { Study } from '@/components/study'
 import { Work } from '@/components/work'
-import { FileText } from 'lucide-react'
-import Link from 'next/link'
 
 // async function getPosts(): Promise<{ data: { posts: Post[] } }> {
 // 	const query = `
@@ -89,7 +87,7 @@ export default async function Home() {
 
 			<Dots />
 
-			<Localization />
+			<MapRender />
 
 			<Dots />
 
