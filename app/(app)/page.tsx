@@ -5,6 +5,7 @@ import { GithubLink } from '@/components/github-link'
 import { LinkedinLink } from '@/components/linkedin-link'
 import { MapRender } from '@/components/map-render'
 import { Name } from '@/components/name'
+import { Skills } from '@/components/skills'
 import { Study } from '@/components/study'
 import { Work } from '@/components/work'
 
@@ -87,9 +88,11 @@ export default async function Home() {
 
 			<Dots />
 
-			<MapRender />
+			<Skills />
 
 			<Dots />
+
+			<MapRender />
 
 			<div className="flex items-center justify-between">
 				<span className="text-zinc-400 text-sm -tracking-wide">
