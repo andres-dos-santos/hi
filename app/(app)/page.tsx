@@ -94,7 +94,7 @@ export default async function Home() {
 
 			<MapRender />
 
-			<div className="flex items-center justify-between">
+			<div className="flex items-center justify-between mt-20">
 				<span className="text-zinc-400 text-sm -tracking-wide">
 					© 2025 Andres
 				</span>
