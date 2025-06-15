@@ -37,36 +37,45 @@
     @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[30px] mb-10;
   }
 
-  strong {
-    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100;
+  .prose strong {
+    @apply text-sm font-medium text-zinc-800 dark:text-zinc-100;
+  }
+
+  .prose ol li div {
+    @apply text-[15px] text-zinc-800 dark:text-zinc-100;
+  }
+
+  .prose ol li::marker {
+    @apply text-cyan-600 text-sm font-medium;
   }
 
   .prose h3 strong {
     @apply text-zinc-800 dark:text-zinc-100 tracking-widest block text-sm font-code font-bold uppercase my-20;
   }
 
-  #article ul {
+  /* #article ul {
     @apply list-disc;
-  }
+  } */
 
-  #article li {
+  /* #article li {
     @apply flex before:content-['-_'] items-start font-bold text-cyan-500 mb-5;
   }
 
   #article li div {
     @apply ml-2 text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] font-normal;
-  }
+  } */
 
   .prose p a { 
     @apply text-sm sm:text-[15px] text-blue-500 font-normal lowercase leading-[28px] sm:leading-[30px] mb-10;
   }
 
-  blockquote {
-    @apply border-l-8 border-zinc-100 dark:border-zinc-700/50 p-5;
+  .prose blockquote {
+    @apply border-l-0 -ml-5 border-zinc-100 dark:border-zinc-700/50 py-2.5 pl-5 my-10 text-3xl text-pretty -tracking-wide font-light flex not-italic;
   }
 
-  blockquote, p {
-    @apply text-sm sm:text-[15px] text-zinc-800 dark:text-zinc-100 leading-[28px] sm:leading-[28px] mb-10;
+  .prose blockquote::before {
+    content: '“';
+    @apply text-4xl font-extrabold text-cyan-600 font-cormorant mr-2.5;
   }
 
   .prose pre {
