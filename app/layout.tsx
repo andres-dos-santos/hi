@@ -1,33 +1,11 @@
-/* eslint-disable camelcase */
 import type { Metadata } from 'next'
-import { Jost, IBM_Plex_Mono, Cormorant } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 
-import localFont from 'next/font/local'
+import { fonts } from '@/lib/fonts'
 
 import './globals.css'
 
-const barlow = Jost({
-	subsets: ['latin'],
-	variable: '--font-barlow',
-	weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-})
-
-const cormorant = Cormorant({
-	subsets: ['latin'],
-	variable: '--font-cormorant',
-	weight: ['300', '400', '500', '600', '700'],
-})
-
-const plexMono = IBM_Plex_Mono({
-	subsets: ['latin'],
-	weight: ['400'],
-	variable: '--font-code',
-})
-
-const TTDemiBold = localFont({
-	src: '../public/fonts/tt-firs-neue/demi-bold.ttf',
-	variable: '--font-tt-demi-bold',
-})
+const { code, display, serif } = fonts
 
 export const metadata: Metadata = {
 	title: 'Andres dos Santos - Portfolio',
@@ -43,10 +21,11 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${barlow.variable} ${cormorant.variable} ${TTDemiBold.variable} ${plexMono.variable}`}
+			className={`${display.variable} ${code.variable} ${serif.variable} antialiased`}
+			suppressHydrationWarning
 		>
-			<body className="min-h-screen max-w-[500px] w-[500px] mx-auto py-[120px]">
-				{children}
+			<body>
+				<ThemeProvider defaultTheme="system">{children}</ThemeProvider>
 			</body>
 		</html>
 	)
