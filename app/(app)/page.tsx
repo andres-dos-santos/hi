@@ -73,7 +73,7 @@ export default async function Home() {
 		<div className="p-10">
 			<Name />
 
-			<div className="flex items-center justify-between mt-10 w-full pb-10">
+			<div className="flex items-center justify-between mt-10 w-full">
 				<Skills />
 			</div>
 

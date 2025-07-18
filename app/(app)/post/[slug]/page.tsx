@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ChevronLast, ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
 
 interface Data {
@@ -53,19 +53,25 @@ export default async function Page(props: {
 
 	return (
 		<div className="px-10">
-			<Link href="/" className="mb-20 mt-10 flex items-center gap-5">
-				<ArrowLeft className="size-3" />
-				<span className="text-xs">
-					{dayjs(post.createdAt).format('DD/MM/YY')}
+			<Link
+				href="/"
+				className="sticky top-0 h-20 border-b border-zinc-200 bg-white mb-10 flex items-center gap-5"
+			>
+				<ChevronLeft className="size-3" />
+				<span className="text-xs flex items-center justify-center">
+					{dayjs(post.createdAt).format('YY MMM, DD')}{' '}
+					<div className="h-1 w-1 rounded-full bg-zinc-500 mx-2" /> {post.title}{' '}
+					<div className="h-1 w-1 rounded-full bg-zinc-500 mx-2" /> Write by
+					Andres
 				</span>
 			</Link>
 
-			<h1 className="font-serif text-zinc-800/90 font-medium text-5xl -tracking-wide">
+			<h1 className="font-serif text-zinc-800/90 font-medium text-5xl -tracking-wide px-5">
 				{post.title}
 			</h1>
 
 			<div
-				className="mt-10 prose"
+				className="mt-10 px-5 prose"
 				// biome-ignore lint/security/noDangerouslySetInnerHtml: <>
 				dangerouslySetInnerHTML={{ __html: post.html.html }}
 			/>
