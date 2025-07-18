@@ -7,6 +7,7 @@ import {
 	SheetHeader,
 	SheetTrigger,
 } from '@/components/ui/sheet'
+import { readTime } from '@/lib/read-time'
 
 function Name() {
 	return (
@@ -69,6 +70,8 @@ export default async function Home() {
 
 	const hasMoreThanOneArticle = articles.length > 0
 
+	const timeToRead = readTime(highlight.html.html)
+
 	return (
 		<div className="p-10">
 			<Name />
@@ -99,7 +102,8 @@ export default async function Home() {
 
 							<section className="mt-2.5">
 								<span className="text-[10px] text-neutral-500 dark:text-neutral-300 uppercase font-code -tracking-wider">
-									{dayjs(highlight.createdAt).format('DD MMM[,] YY')} • 11 min.
+									{dayjs(highlight.createdAt).format('DD MMM[,] YY')} •{' '}
+									{timeToRead} min.
 								</span>
 							</section>
 						</Link>

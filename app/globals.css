@@ -148,7 +148,11 @@
   }
 
   .prose blockquote {
-    @apply text-xl leading-[32px] border-l border-zinc-500 not-italic font-light mb-10;
+    @apply text-xl leading-[32px] border-l border-zinc-500 not-italic font-normal mb-10;
+  }
+
+  .prose code {
+    @apply font-code;
   }
 
   .prose ol {
@@ -161,6 +165,10 @@
 
   .prose ul {
     @apply mb-10;
+  }
+
+  .prose h3 {
+    @apply font-normal mb-10;
   }
 
   .prose ol li div {

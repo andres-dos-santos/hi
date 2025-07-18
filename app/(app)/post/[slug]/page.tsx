@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
-import { ArrowLeft, ChevronLast, ChevronLeft } from 'lucide-react'
+import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
+import { readTime } from '@/lib/read-time'
 
 interface Data {
 	id: string
@@ -50,12 +51,13 @@ export default async function Page(props: {
 	const { data } = await getStudy(slug)
 
 	const post = data.posts[0]
+	const timeToRead = readTime(post.html.html)
 
 	return (
 		<div className="px-10">
 			<Link
 				href="/"
-				className="sticky top-0 h-20 border-b border-zinc-200 bg-white mb-10 flex items-center gap-5"
+				className="sticky top-0 h-14 border-b border-zinc-200 bg-white mb-10 flex items-center gap-5"
 			>
 				<ChevronLeft className="size-3" />
 				<span className="text-xs flex items-center justify-center">
@@ -63,6 +65,8 @@ export default async function Page(props: {
 					<div className="h-1 w-1 rounded-full bg-zinc-500 mx-2" /> {post.title}{' '}
 					<div className="h-1 w-1 rounded-full bg-zinc-500 mx-2" /> Write by
 					Andres
+					<div className="h-1 w-1 rounded-full bg-zinc-500 mx-2" />
+					{timeToRead} min.
 				</span>
 			</Link>
 
@@ -76,10 +80,10 @@ export default async function Page(props: {
 				dangerouslySetInnerHTML={{ __html: post.html.html }}
 			/>
 
-			<footer className="mt-10 pt-10 px-2.5 pb-40 border-t border-dashed border-t-zinc-200 flex items-center justify-between">
-				<span className="text-[13px] text-muted-foreground">
+			<footer className="mt-10 pt-10 px-2.5 pb-40 flex items-center justify-between">
+				{/* <span className="text-[13px] text-muted-foreground">
 					Created at {dayjs(post.createdAt).format('YYYY MMM, DD')}
-				</span>
+				</span> */}
 
 				{/* <button type="button" className="flex items-center justify-center">
 					<span className="text-sm text-zinc-700">
