@@ -1,15 +1,14 @@
 import dayjs from 'dayjs'
 import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'
+import Article from '@/components/article'
 import { readTime } from '@/lib/read-time'
 
 interface Data {
 	id: string
 	slug: string
 	title: string
-	html: {
-		html: string
-	}
+	html: string
 	createdAt: string
 }
 
@@ -20,13 +19,13 @@ query GetStudy($slug: String!) {
     slug
 		title
     html {
-      html
+      markdown
     }
     createdAt
  } 
 }`
 
-async function getStudy(slug: string): Promise<{ data: { posts: Data[] } }> {
+async function getStudy(slug: string): Promise<{ post: Data }> {
 	const response = await fetch(
 		'https://us-west-2.cdn.hygraph.com/content/cm7n4xwav033s07uu05lcbud9/master',
 		{
@@ -40,7 +39,15 @@ async function getStudy(slug: string): Promise<{ data: { posts: Data[] } }> {
 
 	const json = await response.json()
 
-	return json
+	const post = json.data.posts[0]
+
+	// const html = Prism.highlight(
+	// 	post.html.markdown,
+	// 	Prism.languages.javascript,
+	// 	'javascript',
+	// )
+
+	return { post: { ...post, html: post.html.markdown } }
 }
 
 export default async function Page(props: {
@@ -48,10 +55,9 @@ export default async function Page(props: {
 }) {
 	const { slug } = await props.params
 
-	const { data } = await getStudy(slug)
+	const { post } = await getStudy(slug)
 
-	const post = data.posts[0]
-	const timeToRead = readTime(post.html.html)
+	const timeToRead = readTime(post.html)
 
 	return (
 		<div className="px-10">
@@ -74,11 +80,7 @@ export default async function Page(props: {
 				{post.title}
 			</h1>
 
-			<div
-				className="mt-10 px-5 prose"
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: <>
-				dangerouslySetInnerHTML={{ __html: post.html.html }}
-			/>
+			<Article content={post.html} />
 
 			<footer className="mt-10 pt-10 px-2.5 pb-40 flex items-center justify-between">
 				{/* <span className="text-[13px] text-muted-foreground">

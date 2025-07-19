@@ -140,7 +140,7 @@
 @layer utilities {
   /* prose */
   .prose p {
-    @apply text-sm leading-7 mb-10;
+    @apply text-sm leading-7 mb-5;
   }
 
   .prose strong {
@@ -148,27 +148,23 @@
   }
 
   .prose blockquote {
-    @apply text-xl leading-[32px] border-l border-zinc-500 not-italic font-normal mb-10;
-  }
-
-  .prose code {
-    @apply font-code;
+    @apply text-xl leading-[32px] border-l border-zinc-500 not-italic font-normal mb-5;
   }
 
   .prose ol {
-    @apply mb-10;
+    @apply mb-5;
   }
 
   .prose pre {
-    @apply mb-10 rounded p-10;
+    @apply mb-5 rounded-xl text-xs bg-white dark:bg-zinc-900 border border-zinc-200;
   }
 
   .prose ul {
-    @apply mb-10;
+    @apply mb-5;
   }
 
   .prose h3 {
-    @apply font-normal mb-10;
+    @apply font-normal mb-5;
   }
 
   .prose ol li div {

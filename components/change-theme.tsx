@@ -22,9 +22,11 @@ export function ThemeChanger() {
 		setTheme(theme === 'light' ? 'dark' : 'light')
 	}
 
-	return (
-		<button type="button" onClick={handleChangeTheme}>
-			{theme && Icon[theme]}
-		</button>
-	)
+	return null
+
+	// return (
+	// 	<button type="button" onClick={handleChangeTheme}>
+	// 		{theme && Icon[theme]}
+	// 	</button>
+	// )
 }
